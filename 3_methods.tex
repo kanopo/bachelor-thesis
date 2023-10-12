@@ -1,0 +1,42 @@
+
+
+\section{Metodi}
+\subsection{Dati}
+
+Tutti i dati provengono da analisi ecografiche effettuate presso \textbf{Azienda Ospedaliero-Universitaria di Parma}.
+Le immagini raccolte si rifanno al periodo compreso tra \textbf{Aprile 2022} e \textbf{Gennaio 2023} e sono state selezionando tenendo conto di alcuni parametri per standardizzare l'input come:
+\begin{itemize}
+  \item Indice di massa corporea (BMI)
+  \item Età delle madri
+  \item Problematiche durante la gravidanza
+  \item Problematiche dopo il parto
+  \item Immagini scattate con la medesima angolazione rispetto al femore
+\end{itemize}
+
+
+Le immagini hanno subito un processo di \textit{preprocessing} aggiuntivo per uniformare le dimensioni e la risoluzione. In particolare, sono state ridimensionate a immagini \textbf{$1280px$ di larcghezza} e \textbf{$876px$ di altezza}.
+
+
+Inoltre data la tipologia del problema, si è scelto di convertire le immagine da \textbf{RGB} a immagini in \textbf{scala di grigi}.
+
+
+Sono state realizzate manualmente delle \textbf{maschere} di segmantazione per ogni immagine, in modo da avere un \textit{ground truth} da confrontare con le predizioni del modello.
+
+
+Data la scarsa quanti di dati a disposizione per l'addestramento della UNET, si è scelto di utilizzare alcune tecniche di \textit{data augmentation} per aumentare la quantità di dati a disposizione. In particolare si è scelto di utilizzare le seguenti tecniche applicate in modo casuale per ogni coppia \textbf{immagine-maschera}
+\begin{itemize}
+	\item \textit{Flip} orizzontale e verticale
+	\item \textit{Rotazioni} di $35^{\circ}$
+	\item \textit{Rumore} Gaussiano
+\end{itemize}
+
+Queste tecniche di \textit{data augmentation} migliorano notevolmente le segmentazioni ottenute mediante la rete UNET e rendono la rete più robusta a variazioni di luce e a rumore presente nelle immagini.
+
+
+\subsection{Modello}
+
+Il modello di partenza (\autoref{fig:unet}) è stato realizzato seguendo la struttura della rete \textbf{UNET} \cite{ronneberger2015unet} proposta da Olaf Ronneberger, Philipp Fischer e Thomas Brox nel 2015. La rete è stata implementata utilizzando il framework \textbf{PyTorch} \cite{pytorch}.
+
+% TODO: Spiegone su UNET
+
+
