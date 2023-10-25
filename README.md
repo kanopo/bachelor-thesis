@@ -4,8 +4,8 @@
 ## Linee guida
 In particolare avrai indicativamente i seguenti capitoli:
 - [x] Introduzione dove spieghi un po' in generale il problema che hai affrontato (segmentazione automatica di un oggetto su immagini di ecografie) e l'obiettivo
-- [ ] Related works: capitolo breve in cui riassumi lavori simili in letteratura (magari cerca un po' di articoli)
-- [ ] Metodo: qui descrivi il tuo metodo, quindi la U-net modificata, come hai ottenuto i dati ecc
+- [x] Related works: capitolo breve in cui riassumi lavori simili in letteratura (magari cerca un po' di articoli)
+- [x] Metodo: qui descrivi il tuo metodo, quindi la U-net modificata, come hai ottenuto i dati ecc
 - [ ] Risultati sperimentali: qui descrivi i training, i risultati che hai ottenuto e magari qualche figura di esempio
 
 
@@ -17,4 +17,8 @@ In particolare avrai indicativamente i seguenti capitoli:
 - [ ] Due righe che riassumono la correlazione ottenuta dai medici 
 - [ ] Più enfasi su esempi nuovi fatti post addestramento 
 - [ ] Fare immagini bene unet
-- [ ] Se voglio fare dottorato meglio fare una tesi divers amagistrale
+
+
+## TODO:
+
+- [ ] processo di etichettatura con labelme
