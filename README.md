@@ -19,6 +19,5 @@ In particolare avrai indicativamente i seguenti capitoli:
 - [ ] Fare immagini bene unet
 
 
-## TODO:
-
-- [ ] processo di etichettatura con labelme
+## TODO
+- [ ] processo di training(immagini pronte)
