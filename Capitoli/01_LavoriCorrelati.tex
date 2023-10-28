@@ -1,0 +1,110 @@
+% !TeX spellcheck = it_IT
+
+\chapter{Lavori correlati} \label{chap:related_works}
+
+
+\section{Segmentazione} \label{sec:segmentazione} 
+\todo{Aggiungere binary semantic segmentation}
+
+
+\section{Fully Convolutional Network} 
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{Immagini/cnn.png}
+  \end{center}
+  \caption{CNN}
+  \label{fig:cnn}
+\end{figure}
+
+
+
+\label{sec:fcn} L'articolo \textit{Fully
+Convolutional Networks for Semantic Segmentation} \cite{long2015fully} propone
+l'utilizzo di una tipologia di reti neurali Convolutionali (CNN) che permettono
+grazie all'assenza di layer completamente connessi di elaborare immagini di
+qualunque dimensione. Questa nuova tipologia di reti migliora notevolmente le
+le capacità di apprendimento delle reti neurali permettendo di produrre mappe
+di segmentazione più precise grazie alla loro capacità di apprendimento di
+informazioni spaziali.
+
+Le motivazioni riguardanti l'ampio utilizzo nel settore della
+\textit{computer vision} sono legate all'assenza di strati completamente
+connessi (lineari) che vincolano l'input alla medesima grandezza per ogni
+singola immagine, permettendo di fornire in input l'intera immagine e non
+frammenti della stessa così da aumentare l'apprendimento spaziale della rete.
+
+Questa maggior flessibilità comporta un'addestramento libero da limitaioni
+sull'input comportando una maggiore tolleranza agli errori e al rumore
+rendendo questa tipologia di reti particolarmente adatte a contesti poveri di
+dati.
+
+
+
+
+\section{U-Net} \label{sec:unet} \todo{Aggiungere unet}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{Immagini/unet.png}
+  \end{center}
+  \caption{U-Net}\label{fig:unet}
+\end{figure}
+
+
+L'architettura \textbf{U-net} \cite{ronneberger2015unet} è una particolare
+implementazione di FCN che permette di effettuare segmentazioni semantiche,
+in quanto è in grado di gestire input di qualsiasi dimensione e di produrre
+mappe di segmentazione pi\`u precise grazie alla sua capacit\`a di apprendere
+contesti spaziali.
+
+
+
+\section{Segmentazione ossea} \label{sec:segmentazione_ossea}
+
+Il lavoro \textit{Towards whole-body CT Bone Segmentation}
+\cite{10.1007/978-3-662-56537-7_59} costituisce un'importante analisi volta a
+sviluppare metodi e algoritmi avanzati per la segmentazione ossea in immagini
+ottenute tramite tomografia computerizzata (TC) di tutto il corpo. Il documento
+si concentra sull'importanza della segmentazione ossea nell'ambito medico per
+diagnosticare condizioni patologiche e condurre analisi dettagliate del tessuto
+osseo.
+
+Il contributo principale dell'articolo consiste nella valutazione di approcci
+innovativi e nell'ottimizzazione di tecniche algoritmiche per identificare e
+isolare accuratamente le strutture ossee nelle immagini TC. Sottolinea
+l'utilizzo di metodologie avanzate di elaborazione delle immagini e
+l'applicazione di algoritmi di visione artificiale e machine learning per
+ottenere una segmentazione precisa.
+
+L'articolo è rilevante nell'ambito dell'informatica medica in quanto evidenzia
+l'applicazione di soluzioni informatiche per l'analisi approfondita delle
+immagini mediche, sottolineando l'importanza delle tecniche di segmentazione
+ossea per fini clinici e di ricerca biomedica.
+
+
+\section{Segmentazione di vasi sanguigni}
+\label{sec:segmentazione_vasi_sanguigni}
+
+L'articolo \textit{Accurate Retinal Vessel Segmentation via Octave Convolution
+Neural Network} \cite{fan2020accurate} propone un approccio innovativo per la
+segmentazione precisa dei vasi sanguigni retinici utilizzando le reti neurali a
+convoluzione ottava. Questa segmentazione è un'importante fase nell'analisi
+delle immagini retiniche in ambito medico.
+
+L'articolo esamina il vantaggio delle reti neurali a convoluzione ottava, un
+tipo di rete neurale che sfrutta differenti frequenze spaziali per catturare
+dettagli a diverse scale. Questo approccio consente di migliorare la
+segmentazione dei vasi sanguigni retinici, consentendo una migliore
+comprensione e diagnosi di patologie oculari.
+
+Il lavoro si concentra sull'efficacia delle reti neurali a convoluzione ottava
+nel rilevare e isolare i vasi sanguigni della retina, evidenziando come questo
+approccio abbia portato a risultati più accurati rispetto a metodi
+convenzionali.
+
+In conclusione, l'articolo \textit{Accurate Retinal Vessel Segmentation via
+Octave Convolution Neural Network} costituisce un contributo significativo
+nell'ambito della segmentazione vascolare retinica, evidenziando l'efficacia
+delle reti neurali a convoluzione ottava e la loro importanza nella diagnostica
+medica.
+
