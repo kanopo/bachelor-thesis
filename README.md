@@ -13,8 +13,8 @@ In particolare avrai indicativamente i seguenti capitoli:
 ## Aggiunte in videochiamata
 - [x] Spiegare brevemente perché si fa questo modello 
 - [x] Più enfasi su parti innovative, rete buonaa con pochi dati, miglioria nel decoding encoding 
-- [ ] Introduco il problema medico nei medici 
-- [ ] Due righe che riassumono la correlazione ottenuta dai medici 
+- [x] Introduco il problema medico nei medici 
+- [x] Due righe che riassumono la correlazione ottenuta dai medici 
 - [x] Più enfasi su esempi nuovi fatti post addestramento 
 - [ ] Fare immagini bene unet
 
