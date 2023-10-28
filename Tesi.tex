@@ -12,23 +12,23 @@
 %%%%% THESIS / TITLE PAGE INFORMATION
 % Everybody needs to complete the following:
 
-\title{Titolo in Italiano}
-\author{Nome Cognome}
-\advisor{Prof. Nome Cognome}
-\college{Dipartimento di Scienze Matematiche, Fisiche e Informatiche}
-\degree{Corso di Laurea [Triennale in Informatica | Magistrale in Scienze Informatiche]}
-\degreeyears{20XX--20XX}
+\title{Addestramento di una rete neurale encoder-decoder con dati limitati per la segmentazione del femore fetale da immagini ecografiche}
+\author{Dmitri Ollari Ischimji}
+\advisor{Prof. Claudio Ferrari}
+\college{Dipartimento di Ingegneria e Architettura}
+\degree{Corso di Laurea Triennale in Ingegneria dei Sistemi Informativi}
+\degreeyears{2023--2024}
 
 
 % Not mandatory fields
-\newcommand{\subTitle}{Titolo in Inglese} %Subtitle, usually the english version of the title
+\newcommand{\subTitle}{Training an encoder-decoder neural network with limited data for fetal femur segmentation from echographic images} %Subtitle, usually the english version of the title
 
 %\newcommand{\advisorSecond}{Prof. Nome2 Cognome2} % For multiple (up to 4) advisors -- if this is not present then also the remaining ones are automatically omitted
 %\newcommand{\advisorThird}{Dott. Nome3 Cognome3} % For multiple (up to 4) advisors -- if this is not present then also the remaining ones are automatically omitted
 %\newcommand{\advisorFourth}{Dott. Nome4 Cognome4} % For multiple (up to 4) advisors
 
-\newcommand{\coadvisor}{Prof. co-Nome co-Cognome} %For multiple (up to 4) coadvisors -- if this is not present then also the remaining ones are automatically omitted
-\newcommand{\coadvisorSecond}{Prof. co-Nome2 co-Cognome2} % For multiple (up to 4) coadvisors -- if this is not present then also the remaining ones are automatically omitted
+% \newcommand{\coadvisor}{Prof. co-Nome co-Cognome} %For multiple (up to 4) coadvisors -- if this is not present then also the remaining ones are automatically omitted
+% \newcommand{\coadvisorSecond}{Prof. co-Nome2 co-Cognome2} % For multiple (up to 4) coadvisors -- if this is not present then also the remaining ones are automatically omitted
 %\newcommand{\coadvisorThird}{Dott. co-Nome3 co-Cognome3} % For multiple (up to 4) coadvisors -- if this is not present then also the remaining ones are automatically omitted
 %\newcommand{\coadvisorFourth}{Dott. co-Nome4 co-Cognome4} % For multiple (up to 4) coadvisors
 
@@ -42,7 +42,7 @@
 \thispagestyle{empty}
 \null\vspace{\stretch{1}}
 \begin{flushright}
-	\textit{Dedica}
+	\textit{Dedicato a Diego}
 \end{flushright}
 \vspace{\stretch{3}}\null
 \newpage
@@ -53,26 +53,27 @@
 \tableofcontents
 %
 \listoffigures    %Commentare se non vi sono Immagini
-\listofalgorithms %Commentare se non vi sono Algoritmi
+% \listofalgorithms %Commentare se non vi sono Algoritmi
 \listoftables     %Commentare se non vi sono Tabelle
 %
 %
 %
 %%%% La prefazione
-\include{Capitoli/Introduzione}
+% \include{Capitoli/Introduzione}
+\include{Capitoli/00_Introduzione}
 %
 %%%% I Capitoli di Contenuto	
 \pagestyle{fancy}
-\include{Capitoli/Formattazione}
-\include{Capitoli/Background}
-\include{Capitoli/Obiettivi}
-\include{Capitoli/Progettazione-Implementazione}
-\include{Capitoli/Risultati}
+% \include{Capitoli/Formattazione}
+% \include{Capitoli/Background}
+% \include{Capitoli/Obiettivi}
+% \include{Capitoli/Progettazione-Implementazione}
+% \include{Capitoli/Risultati}
 %
 %
 %%%% Le Conclusioni
 \pagestyle{plain}
-\include{Capitoli/Conclusione}
+% \include{Capitoli/Conclusione}
 %
 %%%% La bibliograﬁa
 \bibliographystyle{apalike} %{plain} -- Scegliere lo stile preferito
@@ -80,10 +81,10 @@
 \addcontentsline{toc}{chapter}{\bibname}
 \bibliography{./Bibliografia}
 %
-\include{Capitoli/Ringraziamenti}
+% \include{Capitoli/Ringraziamenti}
 %
 % Le appendici
 \appendix
-\include{Capitoli/Appendici/Appendice1}
+% \include{Capitoli/Appendici/Appendice1}
 %
 \end{document}
