@@ -1,10 +1,22 @@
 % !TeX spellcheck = it_IT
 
 \chapter{Lavori correlati} \label{chap:related_works}
-
-
 \section{Segmentazione} \label{sec:segmentazione} 
-\todo{Aggiungere binary semantic segmentation}
+
+La segmentazione semantica rappresenta un campo di grande interesse e rilevanza
+nell'ambito dell'elaborazione delle immagini e della visione artificiale. Questa
+tecnica si distingue per la sua capacità di interpretare il contenuto delle
+immagini a un livello semantico, andando oltre la semplice divisione
+dell'immagine in regioni omogenee basate su caratteristiche visive come il
+colore o la texture. Nello specifico, la segmentazione semantica si prefigge
+l'obiettivo di attribuire un'etichetta semantica ad ogni singolo pixel
+dell'immagine, consentendo così di identificare e categorizzare le diverse parti
+che compongono la scena.  L'obiettivo principale della segmentazione semantica è
+quello di fornire una comprensione approfondita del contenuto visivo presente in
+un'immagine. Ciò si traduce nella capacità di identificare e categorizzare
+oggetti e regioni, rendendo possibile un'analisi dettagliata e una migliore
+interpretazione dei dati visivi.
+
 
 
 \section{Fully Convolutional Network} 
@@ -41,7 +53,7 @@ dati.
 
 
 
-\section{U-Net} \label{sec:unet} \todo{Aggiungere unet}
+\section{U-Net} \label{sec:unet} 
 
 \begin{figure}[H]
   \begin{center}
@@ -51,11 +63,33 @@ dati.
 \end{figure}
 
 
-L'architettura \textbf{U-net} \cite{ronneberger2015unet} è una particolare
-implementazione di FCN che permette di effettuare segmentazioni semantiche,
-in quanto è in grado di gestire input di qualsiasi dimensione e di produrre
-mappe di segmentazione pi\`u precise grazie alla sua capacit\`a di apprendere
-contesti spaziali.
+\subsection{U-Net: Convolutional Networks for Biomedical Image Segmentation}
+
+Nel 2015, Olaf Ronneberger, Philipp Fischer e Thomas Brox hanno introdotto un
+nuovo modello di rete neurale convoluzionale chiamato \textit{U-Net} per la
+segmentazione semantica di immagini biomedicali \cite{ronneberger2015unet}.
+Questa rete è stata progettata specificamente per affrontare le sfide associate
+alla segmentazione di immagini biomedicali, come la necessità di segmentare
+strutture anatomiche precise con un numero limitato di immagini di
+addestramento.
+
+Il modello \textit{U-Net} è caratterizzato da una struttura simmetrica, in cui
+la parte "contrattiva" (downsampling) cattura il contesto e la parte "espansiva"
+(upsampling) permette una localizzazione precisa. Questa struttura consente alla
+rete di combinare le informazioni di contesto con quelle locali, migliorando la
+precisione della segmentazione.
+
+Una delle principali innovazioni della \textit{U-Net} è l'introduzione di
+collegamenti a salti tra le parti contrattive ed espansive. Questi collegamenti
+trasferiscono le caratteristiche spaziali ad alta risoluzione dalla parte
+contrattiva a quella espansiva, consentendo una maggiore precisione nella
+localizzazione delle strutture segmentate.
+
+Il modello \textit{U-Net} ha dimostrato di ottenere risultati di segmentazione
+di alta qualità su diverse applicazioni biomedicali con un numero limitato di
+immagini di addestramento, rendendolo uno strumento fondamentale per la
+segmentazione semantica in ambito biomedico.
+
 
 
 
