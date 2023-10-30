@@ -30,7 +30,7 @@ Sono state realizzate manualmente delle \textbf{maschere} di segmantazione per
 ogni immagine, in modo da avere un \textit{ground truth} da confrontare con le
 predizioni del modello.
 
-Data la scarsa quanti di dati a disposizione per l'addestramento della UNET, si è scelto di utilizzare alcune tecniche di \textit{data augmentation} per aumentare la quantità di dati a disposizione. In particolare si è scelto di utilizzare le seguenti tecniche applicate in modo casuale per ogni coppia \textbf{immagine-maschera}
+Data la scarsa quanti di dati a disposizione per l'addestramento della U-Net, si è scelto di utilizzare alcune tecniche di \textit{data augmentation} per aumentare la quantità di dati a disposizione. In particolare si è scelto di utilizzare le seguenti tecniche applicate in modo casuale per ogni coppia \textbf{immagine-maschera}
 \begin{itemize}
 	\item \textit{Flip} orizzontale e verticale
 	\item \textit{Rotazioni} di $35^{\circ}$
@@ -39,7 +39,7 @@ Data la scarsa quanti di dati a disposizione per l'addestramento della UNET, si 
 
 
 Queste tecniche di \textit{data augmentation} migliorano notevolmente le
-segmentazioni ottenute mediante la rete UNET e rendono la rete più robusta a
+segmentazioni ottenute mediante la rete U-Net e rendono la rete più robusta a
 variazioni di luce e a rumore presente nelle immagini.
 
 
@@ -168,7 +168,6 @@ Il \textit{max pooling} è utilizzato per ridurre la dimensione delle feature ma
 \subsection{Encoder} % (fold)
 \label{sec:Encoder}
 
-\todo{immagini encoder}
 
 
 La fase di \textit{encoding} è la prima fase della rete U-Net, composta da una serie di strati di convoluzione(\ref{sec:convoluzione}) e max pooling(\ref{sec:Max pooling}) che riducono progressivamente la dimensione spaziale dell'immagine mentre aumentano il numero di canali di \textit{features}.
@@ -188,7 +187,6 @@ Nello specifico, la fase di \textit{encoding} è composta da 3 parti principali:
 
 \subsection{Bridge} % (fold)
 \label{sec:Bridge}
-\todo{immagini bridge}
 
 Il \textit{bridge} è un'innovazione dell'architettura U-Net che contribuisce in modo significativo alla precisione della segmentazione delle immagini.
 
@@ -201,7 +199,6 @@ La fase di \textit{bridge} permette di trasferire informazioni rilevanti tra l'e
 \subsection{Decoder} % (fold)
 \label{sec:Decoder}
 
-\todo{immagini decoder}
 Nella rete U-Net, la fase di decoding \'e responsabile della ricostruzione dell'immagine segmentata a partire dalle informazioni estratte durante l'encoding. Questa fase \'e fondamentale per ottenere una segmentazione di alta qualit\'a.
 
 Le fasi principali del \textit{decoder} sono:
@@ -329,10 +326,30 @@ si eliminano le feature meno importanti e si riduce la dimensione delle feature 
 \section{Metriche}
 \label{sec:metriche}
 
+\todo{Approfondire spiegazioni anche con aggiunta di immagini}
+
 Considerando la tipologia di \textit{task} si è pensato di usare la metrica \textit{Dice BCE Loss} per la \textit{loss} e \textit{Intersection over Union} per l'\textit{accuratezza}.
 
 \subsection{Dice BCE Loss}
-La \textit{Dice BCE Loss} è una metrica che combina due metriche, la \textit{Dice Loss} e la \textit{BCE Loss}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\columnwidth]{Immagini/dice_loss.png}
+  \caption{Dice Loss}
+  \label{fig:dice_loss}
+\end{figure}
+
+La Dice Loss è una metrica di perdita basata sul coefficiente di Dice, che è una
+misura della somiglianza tra due campioni. È particolarmente utile per i dati
+non bilanciati, come è spesso il caso nelle immagini mediche dove la regione di
+interesse occupa una piccola parte dell'immagine. Il coefficiente di Dice è
+definito dal'equazione \ref{eq:dice_loss}.
+
+La Binary Cross-Entropy (BCE) Loss è una delle funzioni di perdita più comuni
+utilizzate nei problemi di classificazione binaria. È particolarmente utile
+quando i dati di output sono probabilità che variano tra 0 e 1. La BCE Loss
+misura quanto le predizioni fatte dal modello si discostano dai veri valori
+(etichette).
+% La \textit{Dice BCE Loss} è una metrica che combina due metriche, la \textit{Dice Loss} e la \textit{BCE Loss}.
 
 \begin{align}
 	% \text{DiceBCELoss} &= \text{DiceLoss} + \text{BCELoss}
