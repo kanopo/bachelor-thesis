@@ -14,18 +14,18 @@
 
 La segmentazione semantica rappresenta un campo di grande interesse e rilevanza
 nell'ambito dell'elaborazione delle immagini e della visione artificiale. Questa
-tecnica si distingue per la sua capacità di interpretare il contenuto delle
+tecnica si distingue per la sua capacità d'interpretare il contenuto delle
 immagini a un livello semantico, andando oltre la semplice divisione
 dell'immagine in regioni omogenee basate su caratteristiche visive come il
 colore o la texture. Nello specifico, la segmentazione semantica si prefigge
-l'obiettivo di attribuire un'etichetta semantica ad ogni singolo pixel
-dell'immagine, consentendo così di identificare e categorizzare le diverse parti
+l'obiettivo di attribuire un'etichetta semantica a ogni singolo pixel
+dell'immagine, consentendo così d'identificare e categorizzare le diverse parti
 che compongono la scena.  L'obiettivo principale della segmentazione semantica è
 quello di fornire una comprensione approfondita del contenuto visivo presente in
-un'immagine. Ciò si traduce nella capacità di identificare e categorizzare
+un'immagine. Ciò si traduce nella capacità d'identificare e categorizzare
 oggetti e regioni, rendendo possibile un'analisi dettagliata e una migliore
 interpretazione dei dati visivi.
-Un'esempio di applicazione della segmentazione semantica la si pu\`o visionare
+Un esempio di applicazione della segmentazione semantica la si pu\`o visionare
 nella figura \ref{fig:segmentazione}, in questo caso l'obiettivo della segmentazione era quello di 
 estrapolare le informazioni relative al motociclista in una classe e le informazioni relative 
 al veicolo in un'altra classe.
@@ -45,21 +45,19 @@ al veicolo in un'altra classe.
 
 \label{sec:fcn} L'articolo \textit{Fully
 Convolutional Networks for Semantic Segmentation} \cite{long2015fully} propone
-l'utilizzo di una tipologia di reti neurali Convolutionali (CNN) che permettono
+l'utilizzo di una tipologia di reti neurali convoluzionali (CNN) che permettono
 grazie all'assenza di layer completamente connessi di elaborare immagini di
-qualunque dimensione. Questa nuova tipologia di reti migliora notevolmente le
-le capacità di apprendimento delle reti neurali permettendo di produrre mappe
-di segmentazione più precise grazie alla loro capacità di apprendimento di
-informazioni spaziali.
+qualunque dimensione. Questa nuova tipologia di reti migliora notevolmente le capacità di apprendimento delle reti neurali permettendo di produrre mappe
+di segmentazione più precise grazie alla loro capacità di apprendimento d'informazioni spaziali.
 
 Le motivazioni riguardanti l'ampio utilizzo nel settore della
 \textit{computer vision} sono legate all'assenza di strati completamente
-connessi (lineari) che vincolano l'input alla medesima grandezza per ogni
-singola immagine, permettendo di fornire in input l'intera immagine e non
+connessi (lineari) che vincolano l'ingresso alla medesima grandezza per ogni
+singola immagine, permettendo di fornire in ingresso l'intera immagine e non
 frammenti della stessa così da aumentare l'apprendimento spaziale della rete.
 
-Questa maggior flessibilità comporta un'addestramento libero da limitaioni
-sull'input comportando una maggiore tolleranza agli errori e al rumore
+Questa maggior flessibilità comporta un addestramento libero da limitazioni
+sull'ingresso comportando una maggiore tolleranza agli errori e al rumore
 rendendo questa tipologia di reti particolarmente adatte a contesti poveri di
 dati.
 
@@ -80,10 +78,10 @@ dati.
 
 Nel 2015, Olaf Ronneberger, Philipp Fischer e Thomas Brox hanno introdotto un
 nuovo modello di rete neurale convoluzionale chiamato \textit{U-Net} per la
-segmentazione semantica di immagini biomedicali \cite{ronneberger2015unet}.
+segmentazione semantica d'immagini biomedicali \cite{ronneberger2015unet}.
 Questa rete è stata progettata specificamente per affrontare le sfide associate
-alla segmentazione di immagini biomedicali, come la necessità di segmentare
-strutture anatomiche precise con un numero limitato di immagini di
+alla segmentazione d'immagini biomedicali, come la necessità di segmentare
+strutture anatomiche precise con un numero limitato d'immagini di
 addestramento.
 
 Il modello \textit{U-Net} è caratterizzato da una struttura simmetrica, in cui
@@ -99,8 +97,7 @@ contrattiva a quella espansiva, consentendo una maggiore precisione nella
 localizzazione delle strutture segmentate.
 
 Il modello \textit{U-Net} ha dimostrato di ottenere risultati di segmentazione
-di alta qualità su diverse applicazioni biomedicali con un numero limitato di
-immagini di addestramento, rendendolo uno strumento fondamentale per la
+di alta qualità su diverse applicazioni biomedicali con un numero limitato d'immagini di addestramento, rendendolo uno strumento fondamentale per la
 segmentazione semantica in ambito biomedico.
 
 
