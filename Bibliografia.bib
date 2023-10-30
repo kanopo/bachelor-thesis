@@ -1,0 +1,132 @@
+@InProceedings{10.1007/978-3-662-56537-7_59, author="Klein, Andr{\'e} and
+  Warszawski, Jan and Hillenga{\ss}, Jens and Maier-Hein, Klaus Hermann",
+  editor="Maier, Andreas and Deserno, Thomas M. and Handels, Heinz and
+  Maier-Hein, Klaus Hermann and Palm, Christoph and Tolxdorff, Thomas",
+  title="Towards Whole-body CT Bone Segmentation", booktitle="Bildverarbeitung
+  f{\"u}r die Medizin 2018", year="2018", publisher="Springer Berlin
+  Heidelberg", address="Berlin, Heidelberg", pages="204--209", abstract="Bone
+  segmentation from CT images is a task that has been worked on for decades. It
+  is an important ingredient to several diagnostics or treatment planning
+  approaches and relevant to various diseases. As high-quality manual and
+  semi-automatic bone segmentation is very time-consuming, a reliable and fully
+  automatic approach would be of great interest in many scenarios. In this
+  publication, we propose a UNet inspired architecture to address the task
+  using Deep Learning. We evaluated the approach on whole-body CT scans of
+  patients suffering from multiple myeloma. As the disease decomposes the bone,
+  an accurate segmentation is of utmost importance for the evaluation of bone
+  density, disease staging and localization of focal lesions. The method was
+  evaluated on an in-house data-set of 6000 2D image slices taken from 15
+  whole-body CT scans, achieving a dice score of 0.96 and an IOU of 0.94.",
+  isbn="978-3-662-56537-7" }
+
+@misc{fan2020accurate, title={Accurate Retinal Vessel Segmentation via Octave
+  Convolution Neural Network}, author={Zhun Fan and Jiajie Mo and Benzhang Qiu
+  and Wenji Li and Guijie Zhu and Chong Li and Jianye Hu and Yibiao Rong and
+  Xinjian Chen}, year={2020}, eprint={1906.12193}, archivePrefix={arXiv},
+  primaryClass={eess.IV} }
+
+
+@misc{long2015fully, title = {Fully Convolutional Networks for Semantic
+  Segmentation}, author = {Jonathan Long and Evan Shelhamer and Trevor
+  Darrell}, year = {2015}, eprint = {1411.4038}, archivePrefix = {arXiv},
+  primaryClass = {cs.CV}, }
+
+
+@misc{ronneberger2015unet, title = {U-Net: Convolutional Networks for
+  Biomedical Image Segmentation}, author = {Olaf Ronneberger and Philipp
+  Fischer and Thomas Brox}, year = {2015}, eprint = {1505.04597}, archivePrefix
+  = {arXiv}, primaryClass = {cs.CV}, }
+
+  @misc{pytorch,
+  author = {PyTorch Team},
+  title = {PyTorch},
+  url = {https://pytorch.org}
+  }
+  
+  
+  @online{labelme,
+    title = {labelme},
+    author = {Kentaro Wada},
+    year = {Sep 25, 2011 – Oct 25, 2023},
+    url = {https://github.com/wkentaro/labelme},
+  }
+
+
+
+  @abstract{abstract1,
+  title = {Prenatal estimation/quantification of the bone mineral density of the fetal femur by means of an 
+artificial intelligence-based algorithm and relationship with birthweight: preliminary results from 
+a pilot study. }
+  author = {Dall’Asta, Ferrari, Ollari Ischimji, Celora, Degennaro, Prati, Ghi }
+  year = {2023},
+  abstract = {
+  Objective 
+  To evaluate the relationship between the bone mineral density (BMD) of the fetal femur 
+  estimated/quantified by means of an artificial intelligence-based algorithm and the birthweight. 
+   
+  Methods 
+  Single center prospective study conducted at a tertiary maternity unit in Italy between April 2022 
+  and January 2023 and including a selected cohort of women submitted to prenatal assessment with 
+  between 35+0 and 37+0 weeks. Only singleton pregnancies from women of Caucasian ethnicity and 
+  booking BMI between 20 and 25 were included. In such cases a standard image of the fetal femur 
+  was acquired using one single US machine and offline processed using an artificial intelligence-based 
+  algorithm allowing the automated quantification of the pixels contained in the femoral area 
+  together with their relative brightness to estimate the BMD of the fetal femur, which was correlated 
+  with the birthweight percentile. 
+   
+  Results 
+  Overall, 151 cases meeting the inclusion criteria were included at a median gestation of 36+2 (35+0-
+  37+0) weeks, of whom 27 (17.9%) had a postnatal diagnosis of SGA. No correlation was found 
+  between estimated BMD and birthweight percentile (Pearson’s correlation 0.064, p=0.433), 
+  however a trend towards increasing birthweight with increasing brightness of the fetal femur was 
+  noted (Figure 1). Cases with a postnatal diagnosis of SGA showed a non-significantly lower mean 
+  BMD compared to AGA fetuses (144.6+22.4 vs 148.7+21.3, p=0.36). 
+   
+  Conclusions 
+  Though no significant correlation was found between bone mineral density and birth weight centile, 
+  a trend towards a lower BMD with decreasing birthweight percentile was noted. The relationship 
+  between birthweight and estimated BMD warrants further investigation from prospective data.
+  }
+}
+
+
+
+@abstract{abstract2,
+  title = {Development of an artificial intelligence-based algorithm for 
+the prenatal estimation/quantification of the fetal bone mineral density. }
+  author = {Dall’Asta, Ferrari, Ollari Ischimji, Celora, Degennaro, Prati, Ghi }
+  year = {2023},
+  abstract = {
+  Objective 
+  To report the development of an artificial intelligence-based algorithm for the prenatal 
+  quantification of the fetal bone mineral density (BMD). 
+   
+  Methods 
+  Single center prospective study conducted at a tertiary maternity unit in Italy between April 2022 
+  and January 2023 and including a selected cohort of women submitted to prenatal assessment with 
+  between 35+0 and 37+0 weeks. Only singleton pregnancies from women of Caucasian ethnicity and 
+  booking BMI between 20 and 25 were included. The collected data include standard images of the 
+  fetal femur acquired with one single US machine, which were manually processed by a single 
+  operator to obtain the segmentation of the fetal femur contour i.e., the spatial location of the femur 
+  in the US image. These data represent the gold standard reference and were subsequently used to 
+  train a deep neural network to perform the segmentation of the fetal femoral area automatically. 
+  Both manual and neural network-derived segmentations are then used to isolate the fetal femur 
+  region from the US image, allowing the automated quantification of the pixels contained in the 
+  femoral area together with their relative brightness, the latter being hypothesized to be correlated 
+  with the BMD of the fetal femur. 
+   
+  Results 
+  Overall, 151 cases meeting the inclusion criteria were considered at a median gestation of 36+2 (35+0-
+  37+0) weeks. The gold standard and the artificial intelligence-based segmentations showed a 92% 
+  agreement in the quantification and detection of the pixels contained in the femoral area and their 
+  relative brightness, evidencing the output of the neural network is reliable to be used for 
+  subsequent analyses. We observed the relative brightness being normally distributed, from which 
+  reference ranges for the gestation were obtained (table 1). 
+   
+  Conclusions 
+  An algorithm for the automated segmentation of the fetal femoral area and reference ranges of 
+  proportionate pixel brightness were developed. This could assist in correlating the brightness of the 
+  femoral area with bone mineral density in cases at low- and high- risk for demineralization of the 
+  fetal bone. 
+  }
+}
