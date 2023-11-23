@@ -20,7 +20,7 @@ jobs:
         run: sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra texlive-lang-italian latexmk
 
       - name: Compile LaTeX document
-        run: latexmk -pdf Tesi.tex
+        run: latexmk -pdf -f Tesi.tex
 
       - name: Create Release
         id: create_release
