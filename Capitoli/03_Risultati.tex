@@ -10,7 +10,7 @@ con una suddivisione dei dati in cinque parti uguali(cinque folds).
 Essendo una tipologia di apprendimento supervisionata, al modello sono fornite immagini
 originali e le loro segmentazioni effettuate manualmente.
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\columnwidth]{Immagini/training.png}
     \caption{Addestramento del modello}
@@ -21,7 +21,7 @@ originali e le loro segmentazioni effettuate manualmente.
 Effettuando l'addestramento con 5 folds, il modello viene addestrato 5 volte, ogni volta con un fold diverso,
 l'errore finale \`e dato dalla media degli errori ottenuti dalle 5 iterazioni.
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.4\columnwidth]{Immagini/fold_0_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_0_accuracy.png}
     \caption{Errore e accuratezza della prima porzione di dati}
@@ -81,7 +81,7 @@ nella classificazione dei pixel tra le due segmentazioni.
 
 Partendo da una immagini (\autoref{fig:immagine originale}) ottenuta mediante la raccolta dati effettuata dai medici, 
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\columnwidth]{Immagini/image.png}
     \caption{Immagine originale}
@@ -92,21 +92,21 @@ Partendo da una immagini (\autoref{fig:immagine originale}) ottenuta mediante la
 % I risultati ottenuti mediante la segmentazione manuale e la segmentazione del modello sono 
 % rispettivamente \autoref{fig:segmentazione manuale} e \autoref{fig:segmentazione del modello}.
 
-% \begin{figure}[H]
+% \begin{figure}[h!]
 %     \centering
 %     \includegraphics[width=0.4\columnwidth]{Immagini/mask.png}
 %     \caption{Segmentazione manuale}
 %     \label{fig:segmentazione manuale}
 % \end{figure}
 
-% \begin{figure}[H]
+% \begin{figure}[h!]
 %     \centering
 %     \includegraphics[width=0.4\columnwidth]{Immagini/prediction.png}
 %     \caption{Segmentazione del modello}
 %     \label{fig:segmentazione del modello}
 % \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \begin{minipage}{0.4\columnwidth}
         \centering
@@ -130,21 +130,21 @@ calcolata la distribuzione dei pixel per confrontare la segmentazione manuale co
 % nelle immagini processate manuale e si \`e confrontata con la distribuzione dei pixel nelle immagini
 % processate dal modello
 
-% \begin{figure}[H]
+% \begin{figure}[h!]
 %     \centering
 %     \includegraphics[width=0.7\columnwidth]{Immagini/handmade_scaled_hist.png}
 %     \caption{Distribuzione Intensità dei pixel della segmentazione manuale}
 %     \label{fig:distribuzione intensità dei pixel della segmentazione manuale}
 % \end{figure}
 
-% \begin{figure}[H]
+% \begin{figure}[h!]
 %     \centering
 %     \includegraphics[width=0.7\columnwidth]{Immagini/model_scaled_hist.png}
 %     \caption{Distribuzione Intensità dei pixel della segmentazione del modello}
 %     \label{fig:distribuzione intensità dei pixel della segmentazione del modello}
 % \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \begin{minipage}{0.45\columnwidth}
         \centering
@@ -161,7 +161,7 @@ calcolata la distribuzione dei pixel per confrontare la segmentazione manuale co
     \end{minipage}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\columnwidth]{Immagini/handmade_vs_model_scaled.png}
     \caption{Confronto tra la segmentazione manuale e quella del modello}
