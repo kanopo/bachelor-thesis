@@ -1,25 +1,25 @@
-\chapter{Risultati sperimentali} % (fold)
+\chapter{Risultati Sperimentali}
 \label{chap:Risultati sperimentali}
 
-\section{Addestramento} % (fold)
+\section{Addestramento}
 \label{sec:Addestramento}
 
-Il modello \`e stato addestrato mediante l'uso della \textit{cross-validation}(\autoref{fig:cross_validation})
-con una suddivisione dei dati in cinque parti uguali(cinque folds).
-
-Essendo una tipologia di apprendimento supervisionata, al modello sono fornite immagini
-originali e le loro segmentazioni effettuate manualmente.
+Il modello è stato addestrato utilizzando la tecnica della \textit{cross-validation} (vedi Figura
+\ref{fig:cross_validation}), con una suddivisione dei dati in cinque parti uguali (cinque folds). In
+questo contesto di apprendimento supervisionato, al modello sono state fornite immagini originali
+insieme alle loro corrispondenti segmentazioni effettuate manualmente.
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.7\columnwidth]{Immagini/training.png}
-    \caption{Addestramento del modello}
-    \label{fig:addestramento del modello}
+    \caption{Processo di addestramento del modello}
+    \label{fig:addestramento_del_modello}
 \end{figure}
 
+L'addestramento è stato eseguito per 5 iterazioni, utilizzando un fold diverso in ciascuna
+iterazione. L'errore finale è stato calcolato come la media degli errori ottenuti in ciascuna delle
+cinque iterazioni.
 
-Effettuando l'addestramento con 5 folds, il modello viene addestrato 5 volte, ogni volta con un fold diverso,
-l'errore finale \`e dato dalla media degli errori ottenuti dalle 5 iterazioni.
 
 \begin{figure}[!ht]
     \centering
@@ -56,30 +56,23 @@ l'errore finale \`e dato dalla media degli errori ottenuti dalle 5 iterazioni.
     \label{fig:loss e accuratezza della quinta porzione di dati}
 \end{figure}
 
-L'\textbf{errore} complessivo viene calcolato come media dei singoli errori
-ottenuti dalle cinque iterazioni mediante la formula
-\ref{eq:dice_bce_loss_complete} portando a un errore medio del
-\textbf{$7.9\%$}.
 
-Mentre l'\textbf{accuratezza} complessiva viene calcolata come media delle singole accuratezze
-ottenute dalle cinque iterazioni mediante la formula \ref{eq:iou} portando a un'accuratezza media del \textbf{$92.1\%$}.
+L'\textbf{errore} complessivo è stato calcolato come media degli errori ottenuti in ciascuna delle
+cinque iterazioni di addestramento, utilizzando la formula \ref{eq:dice_bce_loss_complete}. Il
+risultato è un errore medio del \textbf{$7.9\%$}.
 
+Parallelamente, l'\textbf{accuratezza} complessiva è stata calcolata come la media delle accuratezze
+ottenute in ciascuna iterazione, impiegando la formula \ref{eq:iou}. Ciò ha portato a un'accuratezza
+media del \textbf{$92.1\%$}.
 
+Oltre alle analisi quantitative, è stato fondamentale condurre analisi qualitative sulla
+segmentazione ottenuta dal modello, specialmente considerando il suo impiego in ambito medico per la
+segmentazione dei femori.
 
+Nelle immagini seguenti viene riportato uno delle immagini prese in considerazione per
+l'addestramento del modello e vengono mostrate le segmentazione manuali, le segmentazioni ottenute
+dal modello e la differenze nella classificazione dei pixel tra le due segmentazioni.
 
-Considerando che questo modello \`e stato utilizzato in ambito medico per velocizzare e standardizzare 
-la segmentazione dei femori per un'analisi su questi ultimi, oltre ad analisi quantitative, \`e stato 
-necessario effettuare delle analisi qualitative sulla segmentazione ottenuta dal modello.
-
-Nelle immagini seguenti viene riportato uno delle immagini prese in considerazione per l'addestramento del modello
-e vengono mostrate le segmentazione manuali, le segmentazioni ottenute dal modello e la differenze 
-nella classificazione dei pixel tra le due segmentazioni.
-
-
-
-
-
-Partendo da una immagini (\autoref{fig:immagine originale}) ottenuta mediante la raccolta dati effettuata dai medici, 
 
 \begin{figure}[!ht]
     \centering
@@ -88,23 +81,6 @@ Partendo da una immagini (\autoref{fig:immagine originale}) ottenuta mediante la
     \label{fig:immagine originale}
 \end{figure}
 
-
-% I risultati ottenuti mediante la segmentazione manuale e la segmentazione del modello sono 
-% rispettivamente \autoref{fig:segmentazione manuale} e \autoref{fig:segmentazione del modello}.
-
-% \begin{figure}[!ht]
-%     \centering
-%     \includegraphics[width=0.4\columnwidth]{Immagini/mask.png}
-%     \caption{Segmentazione manuale}
-%     \label{fig:segmentazione manuale}
-% \end{figure}
-
-% \begin{figure}[!ht]
-%     \centering
-%     \includegraphics[width=0.4\columnwidth]{Immagini/prediction.png}
-%     \caption{Segmentazione del modello}
-%     \label{fig:segmentazione del modello}
-% \end{figure}
 
 \begin{figure}[!ht]
     \centering
@@ -123,26 +99,15 @@ Partendo da una immagini (\autoref{fig:immagine originale}) ottenuta mediante la
     \end{minipage}
 \end{figure}
 
-Per sostenere la tesi che il modello riesca a segmentare correttamente le immagini, \`e stata 
-calcolata la distribuzione dei pixel per confrontare la segmentazione manuale con quella del modello.
+% Per sostenere la tesi che il modello riesca a segmentare correttamente le immagini, \`e stata
+% calcolata la distribuzione dei pixel per confrontare la segmentazione manuale con quella del
+% modello.
 
-% Per quantifica la differenza tra le due segmentazioni \`e stata calcolata la distribuzione dei pixel
-% nelle immagini processate manuale e si \`e confrontata con la distribuzione dei pixel nelle immagini
-% processate dal modello
-
-% \begin{figure}[!ht]
-%     \centering
-%     \includegraphics[width=0.7\columnwidth]{Immagini/handmade_scaled_hist.png}
-%     \caption{Distribuzione Intensità dei pixel della segmentazione manuale}
-%     \label{fig:distribuzione intensità dei pixel della segmentazione manuale}
-% \end{figure}
-
-% \begin{figure}[!ht]
-%     \centering
-%     \includegraphics[width=0.7\columnwidth]{Immagini/model_scaled_hist.png}
-%     \caption{Distribuzione Intensità dei pixel della segmentazione del modello}
-%     \label{fig:distribuzione intensità dei pixel della segmentazione del modello}
-% \end{figure}
+Per confermare l'efficacia del modello nella segmentazione delle immagini, si è proceduto con
+l'analisi della distribuzione dei pixel. Questa analisi confronta direttamente la segmentazione
+manuale con quella ottenuta dal modello. L'obiettivo è dimostrare che la distribuzione dei pixel
+nelle segmentazioni del modello corrisponde strettamente a quella delle segmentazioni manuali,
+indicando così una segmentazione accurata.
 
 \begin{figure}[!ht]
     \centering
@@ -168,21 +133,20 @@ calcolata la distribuzione dei pixel per confrontare la segmentazione manuale co
     \label{fig:confronto tra la segmentazione manuale e quella del modello}
 \end{figure}
 
-
-Dai risultati qualitativi e quantitativi si pu\`o constatare che il modello ha una performance
-molto promettente in quanto supera abbondantemente un'accuratezza del $90\%$ e pu\`o essere 
-addestrato incrementando il numero d'immagini a disposizione. 
-
-Non sono necessari ulteriori segmentazioni manuali ma si possono direttamente sfruttare
-le nuove immagini raccolte, segmentarle mediante l'uso del modello e utilizzarle per l'addestramento.
+I risultati mostrano che la distribuzione dei pixel nelle segmentazioni generate dal modello si
+allinea strettamente a quella delle segmentazioni manuali, suggerendo che il modello è in grado di
+segmentare le immagini con precisione.
 
 
+Dall'analisi dei risultati sia qualitativi che quantitativi, emerge che il modello mostra una
+performance molto promettente. In particolare, si evidenzia che il modello supera abbondantemente
+un'accuratezza del $90\%$, offrendo un ampio margine per ulteriori miglioramenti attraverso
+l'incremento del numero di immagini disponibili per l'addestramento.
 
+Degno di nota è la mancanza di ulteriori segmentazioni, non è necessario effettuare ulteriori
+segmentazioni manuali per espandere il set di addestramento. Le nuove immagini raccolte possono
+essere segmentate automaticamente utilizzando il modello e poi impiegate per rafforzare
+ulteriormente il processo di addestramento. Questo approccio non solo semplifica il processo di
+raccolta dati, ma accelera anche la possibilità di miglioramento e adattamento del modello a nuovi
+dati.
 
-% % section Addestramento (end)
-
-
-
-
-
-% % chapter Risultati sperimentali (end)

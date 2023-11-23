@@ -1,15 +1,18 @@
-\chapter{Conclusioni} % (fold)
+\chapter{Conclusioni}
+\label{chap:Conclusioni}
 
-Il modello è stato progettato e realizzato per svolgere la segmentazione d'immagini di femori fetali \cite{abstract1} \cite{abstract2}.
-L'utilizzo del modello permette l'automatizzazione di un compito che altrimenti richiederebbe lo sforzo e il tempo di un 
-professionista che così può svolgere altre attività meno monotone.
-Nello specifico il modello è stato utilizzato per automatizzare l'estrazione dei pixel relativi al femore di un feto 
-nelle settimane 35-37 di gestazione. 
-I pixel estratti venivano processati per estrarne la luminosità che nelle analisi ecografiche corrisponde 
-alla \textbf{densità minerale ossea} o \textbf{bone mineral density}(BMD) del femore fetale
-per correlarlo ai dati relativi al peso di nascita.
+Il modello sviluppato in questo studio è stato progettato per automatizzare la segmentazione di
+immagini di femori fetali \cite{abstract1} \cite{abstract2}. L'utilizzo del modello consente di
+automatizzare un compito che altrimenti richiederebbe tempo e impegno da parte di un professionista,
+liberando risorse per altre attività.
 
-È stato rilevato un tendenza di correlazione debole tra luminosit\`a e peso alla nascita. (\autoref{fig:correlazione tra luminosità e peso alla nascita})
+Specificamente, il modello è stato impiegato per automatizzare l'estrazione dei pixel del femore di
+un feto nelle settimane 35-37 di gestazione. I pixel estratti sono stati analizzati per determinare
+la luminosità, che nelle ecografie è correlata alla \textbf{densità minerale ossea} (\textbf{BMD})
+del femore fetale, e per studiarne la correlazione con il peso di nascita.
+
+Una correlazione debole è stata rilevata tra la luminosità e il peso alla nascita, come illustrato
+nella Figura \ref{fig:correlazione tra luminosità e peso alla nascita}.
 
 \begin{figure}[!ht]
     \centering
@@ -18,6 +21,6 @@ per correlarlo ai dati relativi al peso di nascita.
     \label{fig:correlazione tra luminosità e peso alla nascita}
 \end{figure}
 
-
-La rete neurale si è dimostrata capace di riconoscere i pixel contenenti dati relativi all'area del femore, inoltre i dati prodotti dalla rete hanno portato a tenere in considerazione 
-l'utilizzo della rete per analisi successive.
+La rete neurale ha dimostrato di essere efficace nel riconoscere i pixel contenenti informazioni
+sull'area del femore. Inoltre, i risultati prodotti dalla rete suggeriscono la possibilità di
+utilizzare questo approccio per ulteriori analisi.
