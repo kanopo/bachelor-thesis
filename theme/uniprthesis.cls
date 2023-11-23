@@ -13,8 +13,8 @@
 \usepackage{subcaption}							% multiple images in figure
 \usepackage{fancyhdr} 							% abstract
 \usepackage{listings}							% code
-\usepackage{algorithm}							% pseudo-code
-\usepackage[noend]{algpseudocode}				% pseudo-code
+% \usepackage{algorithm}							% pseudo-code
+% \usepackage[noend]{algpseudocode}				% pseudo-code
 \usepackage{amsthm}								% math environment
 \usepackage{amsmath}							% math environment
 \usepackage{color}		
@@ -37,9 +37,9 @@
 \makeatother
 
 %Italian Lables
-\makeatletter
-\renewcommand{\ALG@name}{Algoritmo}
-\makeatother
+% \makeatletter
+% \renewcommand{\ALG@name}{Algoritmo}
+% \makeatother
 
 \renewcommand{\lstlistingname}{Codice}
 
