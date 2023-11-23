@@ -10,23 +10,20 @@
   \label{fig:segmentazione}
 \end{figure}
 
-La segmentazione semantica rappresenta un campo di grande interesse e rilevanza
-nell'ambito dell'elaborazione delle immagini e della visione artificiale. Questa
-tecnica si distingue per la sua capacità d'interpretare il contenuto delle
-immagini a un livello semantico, andando oltre la semplice divisione
-dell'immagine in regioni omogenee basate su caratteristiche visive come il
-colore o la texture. Nello specifico, la segmentazione semantica si prefigge
-l'obiettivo di attribuire un'etichetta semantica a ogni singolo pixel
-dell'immagine, consentendo così d'identificare e categorizzare le diverse parti
-che compongono la scena.  L'obiettivo principale della segmentazione semantica è
-quello di fornire una comprensione approfondita del contenuto visivo presente in
-un'immagine. Ciò si traduce nella capacità d'identificare e categorizzare
-oggetti e regioni, rendendo possibile un'analisi dettagliata e una migliore
-interpretazione dei dati visivi.
-Un esempio di applicazione della segmentazione semantica la si pu\`o visionare
-nella figura \ref{fig:segmentazione}, in questo caso l'obiettivo della segmentazione era quello di 
-estrapolare le informazioni relative al motociclista in una classe e le informazioni relative 
-al veicolo in un'altra classe, separando entrambe le classi dallo sfondo.
+
+La segmentazione semantica rappresenta un campo di grande interesse e rilevanza nell'ambito
+dell'elaborazione delle immagini e della visione artificiale. Questa tecnica si distingue per la sua
+capacità di interpretare il contenuto delle immagini a un livello semantico, andando oltre la
+semplice divisione dell'immagine in regioni omogenee basate su caratteristiche visive come il colore
+o la texture. Specificamente, la segmentazione semantica mira a attribuire un'etichetta semantica a
+ogni singolo pixel dell'immagine, permettendo così di identificare e categorizzare le diverse parti
+che compongono la scena. L'obiettivo principale è fornire una comprensione approfondita del
+contenuto visivo presente in un'immagine, traducendosi nella capacità di identificare e
+categorizzare oggetti e regioni, il che rende possibile un'analisi dettagliata e una migliore
+interpretazione dei dati visivi. Un esempio di applicazione della segmentazione semantica può essere
+osservato nella figura \ref{fig:segmentazione}, dove l'obiettivo era quello di estrapolare le
+informazioni relative al motociclista in una classe e le informazioni relative al veicolo in
+un'altra, separando entrambe le classi dallo sfondo.
 
 
 
@@ -41,25 +38,22 @@ al veicolo in un'altra classe, separando entrambe le classi dallo sfondo.
 
 
 
-\label{sec:fcn} L'articolo \textit{Fully
-Convolutional Networks for Semantic Segmentation} \cite{long2015fully} propone
-l'utilizzo di una tipologia di reti neurali convoluzionali (CNN) che permettono
-grazie all'assenza di layer completamente connessi di elaborare immagini di
-qualunque dimensione. Questa nuova tipologia di reti migliora notevolmente le capacità di apprendimento delle reti neurali permettendo di produrre mappe
-di segmentazione più precise grazie alla loro capacità di apprendimento d'informazioni spaziali.
+L'articolo \textit{Fully Convolutional Networks for Semantic Segmentation} \cite{long2015fully}
+introduce una tipologia di reti neurali convoluzionali (CNN) che, grazie all'assenza di layer
+completamente connessi, permettono l'elaborazione di immagini di qualunque dimensione. Questo
+approccio innovativo migliora notevolmente le capacità di apprendimento delle reti neurali,
+consentendo la produzione di mappe di segmentazione più precise attraverso un apprendimento efficace
+delle informazioni spaziali.
 
-Le motivazioni riguardanti l'ampio utilizzo nel settore della
-\textit{computer vision} sono legate all'assenza di strati completamente
-connessi (lineari) che vincolano l'ingresso alla medesima grandezza per ogni
-singola immagine, permettendo di fornire in ingresso l'intera immagine e non
-frammenti della stessa così da aumentare l'apprendimento spaziale della rete.
+Le motivazioni per l'ampio utilizzo di queste reti nel settore della \textit{computer vision}
+risiedono nell'assenza di strati completamente connessi, che solitamente vincolano l'ingresso a
+dimensioni fisse per ogni immagine. Questa caratteristica permette alle reti di elaborare l'intera
+immagine anziché solo frammenti, potenziando così l'apprendimento spaziale.
 
-Questa maggior flessibilità comporta un addestramento libero da limitazioni
-sull'ingresso comportando una maggiore tolleranza agli errori e al rumore
-rendendo questa tipologia di reti particolarmente adatte a contesti poveri di
-dati.
-
-
+La maggiore flessibilità offerta da queste reti si traduce in un addestramento meno vincolato da
+limitazioni dimensionali dell'input, risultando in una maggiore tolleranza agli errori e al rumore.
+Di conseguenza, questa tipologia di reti si rivela particolarmente adatta in contesti caratterizzati
+da una scarsità di dati.
 
 
 \section{U-Net} \label{sec:unet} 
@@ -72,81 +66,87 @@ dati.
 \end{figure}
 
 
+% \subsection{U-Net: Convolutional Networks for Biomedical Image Segmentation}
+%
+% Nel 2015, Olaf Ronneberger, Philipp Fischer e Thomas Brox hanno introdotto un nuovo modello di rete
+% neurale convoluzionale chiamato \textit{U-Net} per la segmentazione semantica d'immagini biomedicali
+% \cite{ronneberger2015unet}. Questa rete è stata progettata specificamente per affrontare le sfide
+% associate alla segmentazione d'immagini biomedicali, come la necessità di segmentare strutture
+% anatomiche precise con un numero limitato d'immagini di addestramento.
+%
+% Il modello \textit{U-Net} è caratterizzato da una struttura simmetrica, in cui la parte
+% "contrattiva" (downsampling) cattura il contesto e la parte "espansiva" (upsampling) permette una
+% localizzazione precisa. Questa struttura consente alla rete di combinare le informazioni di contesto
+% con quelle locali, migliorando la precisione della segmentazione.
+%
+% Una delle principali innovazioni della \textit{U-Net} è l'introduzione di collegamenti a salti tra
+% le parti contrattive ed espansive. Questi collegamenti trasferiscono le caratteristiche spaziali ad
+% alta risoluzione dalla parte contrattiva a quella espansiva, consentendo una maggiore precisione
+% nella localizzazione delle strutture segmentate.
+%
+% Il modello \textit{U-Net} ha dimostrato di ottenere risultati di segmentazione di alta qualità su
+% diverse applicazioni biomedicali con un numero limitato d'immagini di addestramento, rendendolo uno
+% strumento fondamentale per la segmentazione semantica in ambito biomedico.
+
+
 \subsection{U-Net: Convolutional Networks for Biomedical Image Segmentation}
 
-Nel 2015, Olaf Ronneberger, Philipp Fischer e Thomas Brox hanno introdotto un
-nuovo modello di rete neurale convoluzionale chiamato \textit{U-Net} per la
-segmentazione semantica d'immagini biomedicali \cite{ronneberger2015unet}.
-Questa rete è stata progettata specificamente per affrontare le sfide associate
-alla segmentazione d'immagini biomedicali, come la necessità di segmentare
-strutture anatomiche precise con un numero limitato d'immagini di
-addestramento.
+Nel 2015, Olaf Ronneberger, Philipp Fischer e Thomas Brox hanno introdotto il modello di rete
+neurale convoluzionale \textit{U-Net} per la segmentazione semantica di immagini biomedicali
+\cite{ronneberger2015unet}. Progettata specificatamente per affrontare le sfide della segmentazione
+in ambito biomedico, come la necessità di segmentare con precisione strutture anatomiche con un
+numero limitato di immagini di addestramento, U-Net ha rappresentato un notevole avanzamento.
 
-Il modello \textit{U-Net} è caratterizzato da una struttura simmetrica, in cui
-la parte "contrattiva" (downsampling) cattura il contesto e la parte "espansiva"
-(upsampling) permette una localizzazione precisa. Questa struttura consente alla
-rete di combinare le informazioni di contesto con quelle locali, migliorando la
-precisione della segmentazione.
+Il modello \textit{U-Net} si distingue per una struttura simmetrica, dove la parte contrattiva
+(downsampling) cattura il contesto e quella espansiva (upsampling) permette una localizzazione
+precisa. Questa configurazione consente alla rete di fondere informazioni di contesto con quelle
+locali, migliorando significativamente la precisione della segmentazione.
 
-Una delle principali innovazioni della \textit{U-Net} è l'introduzione di
-collegamenti a salti tra le parti contrattive ed espansive. Questi collegamenti
-trasferiscono le caratteristiche spaziali ad alta risoluzione dalla parte
-contrattiva a quella espansiva, consentendo una maggiore precisione nella
-localizzazione delle strutture segmentate.
+Una delle innovazioni chiave di \textit{U-Net} è l'introduzione di collegamenti a salti tra le parti
+contrattive ed espansive, che trasferiscono caratteristiche spaziali ad alta risoluzione dalla parte
+contrattiva a quella espansiva, aumentando la precisione nella localizzazione delle strutture
+segmentate.
 
-Il modello \textit{U-Net} ha dimostrato di ottenere risultati di segmentazione
-di alta qualità su diverse applicazioni biomedicali con un numero limitato d'immagini di addestramento, rendendolo uno strumento fondamentale per la
-segmentazione semantica in ambito biomedico.
+Grazie a queste caratteristiche, il modello \textit{U-Net} ha ottenuto risultati eccellenti nella
+segmentazione di immagini biomedicali, anche con un numero limitato di immagini di addestramento,
+diventando così un punto di riferimento nella segmentazione semantica biomedica.
 
 
 
 
 \section{Segmentazione ossea} \label{sec:segmentazione_ossea}
 
-Il lavoro \textit{Towards whole-body CT Bone Segmentation}
-\cite{10.1007/978-3-662-56537-7_59} costituisce un'importante analisi volta a
-sviluppare metodi e algoritmi avanzati per la segmentazione ossea in immagini
-ottenute tramite tomografia computerizzata (TC) di tutto il corpo. Il documento
-si concentra sull'importanza della segmentazione ossea nell'ambito medico per
-diagnosticare condizioni patologiche e condurre analisi dettagliate del tessuto
-osseo.
+Il lavoro \textit{Towards whole-body CT Bone Segmentation} \cite{10.1007/978-3-662-56537-7_59}
+rappresenta un'importante analisi nello sviluppo di metodi e algoritmi avanzati per la segmentazione
+ossea in immagini ottenute tramite tomografia computerizzata (TC) di tutto il corpo. Questo studio
+pone l'accento sull'importanza della segmentazione ossea in campo medico, sia per la diagnosi di
+condizioni patologiche sia per analisi dettagliate del tessuto osseo.
 
-Il contributo principale dell'articolo consiste nella valutazione di approcci
-innovativi e nell'ottimizzazione di tecniche algoritmiche per identificare e
-isolare accuratamente le strutture ossee nelle immagini TC. Sottolinea
-l'utilizzo di metodologie avanzate di elaborazione delle immagini e
-l'applicazione di algoritmi di visione artificiale e machine learning per
-ottenere una segmentazione precisa.
+Il contributo fondamentale dell'articolo risiede nell'esplorazione di approcci innovativi e
+nell'ottimizzazione di tecniche algoritmiche per identificare e isolare con precisione le strutture
+ossee nelle immagini TC. Viene sottolineata l'importanza dell'uso di metodologie avanzate
+nell'elaborazione delle immagini e dell'applicazione di algoritmi di visione artificiale e machine
+learning per ottenere una segmentazione accurata.
 
-L'articolo è rilevante nell'ambito dell'informatica medica in quanto evidenzia
-l'applicazione di soluzioni informatiche per l'analisi approfondita delle
-immagini mediche, sottolineando l'importanza delle tecniche di segmentazione
-ossea per fini clinici e di ricerca biomedica.
+L'articolo assume un ruolo significativo nel campo dell'informatica medica, evidenziando l'impiego
+di soluzioni informatiche per un'analisi approfondita delle immagini mediche e riconoscendo
+l'importanza delle tecniche di segmentazione ossea per applicazioni cliniche e di ricerca biomedica.
 
 
-\section{Segmentazione di vasi sanguigni}
-\label{sec:segmentazione_vasi_sanguigni}
+\section{Segmentazione di vasi sanguigni} \label{sec:segmentazione_vasi_sanguigni}
 
-L'articolo \textit{Accurate Retinal Vessel Segmentation via Octave Convolution
-Neural Network} \cite{fan2020accurate} propone un approccio innovativo per la
-segmentazione precisa dei vasi sanguigni retinici utilizzando le reti neurali a
-convoluzione ottava. Questa segmentazione è un'importante fase nell'analisi
-delle immagini retiniche in ambito medico.
+L'articolo \textit{Accurate Retinal Vessel Segmentation via Octave Convolution Neural Network}
+\cite{fan2020accurate} introduce un approccio innovativo per la segmentazione precisa dei vasi
+sanguigni retinici utilizzando le reti neurali a convoluzione ottava. Questa tecnica gioca un ruolo
+cruciale nell'analisi delle immagini retiniche in ambito medico.
 
-L'articolo esamina il vantaggio delle reti neurali a convoluzione ottava, un
-tipo di rete neurale che sfrutta differenti frequenze spaziali per catturare
-dettagli a diverse scale. Questo approccio consente di migliorare la
-segmentazione dei vasi sanguigni retinici, consentendo una migliore
-comprensione e diagnosi di patologie oculari.
+Il lavoro mette in luce i vantaggi offerti dalle reti neurali a convoluzione ottava, che utilizzano
+differenti frequenze spaziali per catturare dettagli a diverse scale. Questo approccio risulta
+particolarmente efficace nella segmentazione dei vasi sanguigni retinici, contribuendo
+significativamente alla comprensione e diagnosi delle patologie oculari.
 
-Il lavoro si concentra sull'efficacia delle reti neurali a convoluzione ottava
-nel rilevare e isolare i vasi sanguigni della retina, evidenziando come questo
-approccio abbia portato a risultati più accurati rispetto a metodi
-convenzionali.
-
-In conclusione, l'articolo \textit{Accurate Retinal Vessel Segmentation via
-Octave Convolution Neural Network} costituisce un contributo significativo
-nell'ambito della segmentazione vascolare retinica, evidenziando l'efficacia
-delle reti neurali a convoluzione ottava e la loro importanza nella diagnostica
-medica.
-
+L'articolo dimostra l'efficacia di queste reti nel rilevare e isolare i vasi sanguigni della retina,
+mostrando risultati più accurati rispetto ai metodi tradizionali. In definitiva, \textit{Accurate
+Retinal Vessel Segmentation via Octave Convolution Neural Network} offre un contributo importante
+nel campo della segmentazione vascolare retinica, sottolineando l'efficacia e l'importanza delle
+reti neurali a convoluzione ottava nella diagnostica medica.
