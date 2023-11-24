@@ -76,7 +76,7 @@ dal modello e la differenze nella classificazione dei pixel tra le due segmentaz
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.7\columnwidth]{Immagini/image.png}
+    \includegraphics[width=0.6\columnwidth]{Immagini/image.png}
     \caption{Immagine originale}
     \label{fig:immagine originale}
 \end{figure}
@@ -84,20 +84,34 @@ dal modello e la differenze nella classificazione dei pixel tra le due segmentaz
 
 \begin{figure}[!ht]
     \centering
-    \begin{minipage}{0.4\columnwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Immagini/mask.png}
-        \caption{Segmentazione manuale}
-        \label{fig:segmentazione manuale}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.4\columnwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Immagini/prediction.png}
-        \caption{Segmentazione del modello}
-        \label{fig:segmentazione del modello}
-    \end{minipage}
+    \includegraphics[width=0.6\columnwidth]{Immagini/mask.png}
+    \caption{Segmentazione manuale}
+    \label{fig:segmentazione_manuale}
 \end{figure}
+
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.6\columnwidth]{Immagini/prediction.png}
+    \caption{Segmentazione del modello}
+    \label{fig:segmentazione_del_modello}
+\end{figure}
+% \begin{figure}[!ht]
+%     \centering
+%     \begin{minipage}{0.4\columnwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{Immagini/mask.png}
+%         \caption{Segmentazione manuale}
+%         \label{fig:segmentazione manuale}
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}{0.4\columnwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{Immagini/prediction.png}
+%         \caption{Segmentazione del modello}
+%         \label{fig:segmentazione del modello}
+%     \end{minipage}
+% \end{figure}
 
 % Per sostenere la tesi che il modello riesca a segmentare correttamente le immagini, \`e stata
 % calcolata la distribuzione dei pixel per confrontare la segmentazione manuale con quella del
@@ -109,26 +123,41 @@ manuale con quella ottenuta dal modello. L'obiettivo è dimostrare che la distri
 nelle segmentazioni del modello corrisponde strettamente a quella delle segmentazioni manuali,
 indicando così una segmentazione accurata.
 
+% \begin{figure}[!ht]
+%     \centering
+%     \begin{minipage}{0.45\columnwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{Immagini/handmade_scaled_hist.png}
+%         \caption{Distribuzione Intensità dei pixel della segmentazione manuale}
+%         \label{fig:distribuzione intensità dei pixel della segmentazione manuale}
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}{0.45\columnwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{Immagini/model_scaled_hist.png}
+%         \caption{Distribuzione Intensità dei pixel della segmentazione del modello}
+%         \label{fig:distribuzione intensità dei pixel della segmentazione del modello}
+%     \end{minipage}
+% \end{figure}
+
+
 \begin{figure}[!ht]
-    \centering
-    \begin{minipage}{0.45\columnwidth}
         \centering
-        \includegraphics[width=\linewidth]{Immagini/handmade_scaled_hist.png}
+        \includegraphics[width=0.6\linewidth]{Immagini/handmade_scaled_hist.png}
         \caption{Distribuzione Intensità dei pixel della segmentazione manuale}
         \label{fig:distribuzione intensità dei pixel della segmentazione manuale}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\columnwidth}
+\end{figure}
+
+\begin{figure}[!ht]
         \centering
-        \includegraphics[width=\linewidth]{Immagini/model_scaled_hist.png}
+        \includegraphics[width=0.6\linewidth]{Immagini/model_scaled_hist.png}
         \caption{Distribuzione Intensità dei pixel della segmentazione del modello}
         \label{fig:distribuzione intensità dei pixel della segmentazione del modello}
-    \end{minipage}
 \end{figure}
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.7\columnwidth]{Immagini/handmade_vs_model_scaled.png}
+    \includegraphics[width=0.6\columnwidth]{Immagini/handmade_vs_model_scaled.png}
     \caption{Confronto tra la segmentazione manuale e quella del modello}
     \label{fig:confronto tra la segmentazione manuale e quella del modello}
 \end{figure}
