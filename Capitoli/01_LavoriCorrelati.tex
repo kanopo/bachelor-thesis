@@ -1,49 +1,62 @@
 \chapter{Lavori correlati} \label{chap:related_works}
-\section{Segmentazione} \label{sec:segmentazione} 
+\section{Segmentazione} \label{sec:segmentazione}
 
 \begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[width=0.4\textwidth]{Immagini/segmantion_example_image.png}
-    \includegraphics[width=0.4\textwidth]{Immagini/segmantion_example_mask.png}
-  \end{center}
-  \caption{Segmentazione semantica}
-  \label{fig:segmentazione}
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{Immagini/segmantion_example_image.png}
+		\includegraphics[width=0.4\textwidth]{Immagini/segmantion_example_mask.png}
+	\end{center}
+	\caption{Segmentazione semantica}
+	\label{fig:segmentazione}
+\end{figure}
+
+La segmentazione semantica rappresenta un campo di grande interesse e rilevanza
+nell'ambito dell'elaborazione delle immagini e della visione artificiale. Questa
+tecnica si distingue per la sua capacità d'interpretare il contenuto delle
+immagini a un livello semantico, andando oltre la semplice divisione
+dell'immagine in regioni omogenee basate su caratteristiche visive come il
+colore o la texture. Nello specifico, la segmentazione semantica si prefigge
+l'obiettivo di attribuire un' etichetta semantica a ogni singolo pixel
+dell'immagine, consentendo così d'identificare e categorizzare le diverse parti
+che compongono la scena.  L'obiettivo principale della segmentazione semantica è
+quello di fornire una comprensione approfondita del contenuto visivo presente in
+un'immagine. Ciò si traduce nella capacità d'identificare e categorizzare
+oggetti e regioni, rendendo possibile un'analisi dettagliata e una migliore
+interpretazione dei dati visivi.
+Un esempio di applicazione della segmentazione semantica la si pu\`o visionare
+nella figura \ref{fig:segmentazione}, in questo caso l'obiettivo della segmentazione era quello di
+estrapolare le informazioni relative al motociclista in una classe e le informazioni relative
+al veicolo in un'altra classe, separando entrambe le classi dallo sfondo.
+
+
+\section{Fully Convolutional Network}
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{Immagini/cnn.png}
+	\end{center}
+	\caption{CNN}
+	\label{fig:cnn}
 \end{figure}
 
 
-La segmentazione semantica rappresenta un campo di grande interesse e rilevanza nell'ambito
-dell'elaborazione delle immagini e della visione artificiale. Questa tecnica si distingue per la sua
-capacità di interpretare il contenuto delle immagini a un livello semantico, andando oltre la
-semplice divisione dell'immagine in regioni omogenee basate su caratteristiche visive come il colore
-o la texture. Specificamente, la segmentazione semantica mira a attribuire un'etichetta semantica a
-ogni singolo pixel dell'immagine, permettendo così di identificare e categorizzare le diverse parti
-che compongono la scena. L'obiettivo principale è fornire una comprensione approfondita del
-contenuto visivo presente in un'immagine, traducendosi nella capacità di identificare e
-categorizzare oggetti e regioni, il che rende possibile un'analisi dettagliata e una migliore
-interpretazione dei dati visivi. Un esempio di applicazione della segmentazione semantica può essere
-osservato nella figura \ref{fig:segmentazione}, dove l'obiettivo era quello di estrapolare le
-informazioni relative al motociclista in una classe e le informazioni relative al veicolo in
-un'altra, separando entrambe le classi dallo sfondo.
 
+\label{sec:fcn} L'articolo \textit{Fully
+	Convolutional Networks for Semantic Segmentation} \cite{long2015fully} propone
+l'utilizzo di una tipologia di reti neurali convoluzionali (CNN) che permettono
+grazie all'assenza di layer completamente connessi di elaborare immagini di
+qualunque dimensione. Questa nuova tipologia di reti migliora notevolmente le capacità di apprendimento delle reti neurali permettendo di produrre mappe
+di segmentazione più precise grazie alla loro capacità di apprendimento d' informazioni spaziali.
 
+Le motivazioni riguardanti l'ampio utilizzo nel settore della
+\textit{computer vision} sono legate all'assenza di strati completamente
+connessi (lineari) che vincolano l'ingresso alla medesima grandezza per ogni
+singola immagine, permettendo di fornire in ingresso l'intera immagine e non
+frammenti della stessa così da aumentare l'apprendimento spaziale della rete.
 
-\section{Fully Convolutional Network} 
-\begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{Immagini/cnn.png}
-  \end{center}
-  \caption{CNN}
-  \label{fig:cnn}
-\end{figure}
-
-
-
-L'articolo \textit{Fully Convolutional Networks for Semantic Segmentation} \cite{long2015fully}
-introduce una tipologia di reti neurali convoluzionali (CNN) che, grazie all'assenza di layer
-completamente connessi, permettono l'elaborazione di immagini di qualunque dimensione. Questo
-approccio innovativo migliora notevolmente le capacità di apprendimento delle reti neurali,
-consentendo la produzione di mappe di segmentazione più precise attraverso un apprendimento efficace
-delle informazioni spaziali.
+Questa maggior flessibilità comporta un addestramento libero da limitazioni
+sull'ingresso comportando una maggiore tolleranza agli errori e al rumore
+rendendo questa tipologia di reti particolarmente adatte a contesti poveri di
+dati.
 
 Le motivazioni per l'ampio utilizzo di queste reti nel settore della \textit{computer vision}
 risiedono nell'assenza di strati completamente connessi, che solitamente vincolano l'ingresso a
@@ -56,13 +69,13 @@ Di conseguenza, questa tipologia di reti si rivela particolarmente adatta in con
 da una scarsità di dati.
 
 
-\section{U-Net} \label{sec:unet} 
+\section{U-Net} \label{sec:unet}
 
 \begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{Immagini/unet.png}
-  \end{center}
-  \caption{U-Net}\label{fig:unet}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{Immagini/unet.png}
+	\end{center}
+	\caption{U-Net}\label{fig:unet}
 \end{figure}
 
 
@@ -147,6 +160,6 @@ significativamente alla comprensione e diagnosi delle patologie oculari.
 
 L'articolo dimostra l'efficacia di queste reti nel rilevare e isolare i vasi sanguigni della retina,
 mostrando risultati più accurati rispetto ai metodi tradizionali. In definitiva, \textit{Accurate
-Retinal Vessel Segmentation via Octave Convolution Neural Network} offre un contributo importante
+	Retinal Vessel Segmentation via Octave Convolution Neural Network} offre un contributo importante
 nel campo della segmentazione vascolare retinica, sottolineando l'efficacia e l'importanza delle
 reti neurali a convoluzione ottava nella diagnostica medica.

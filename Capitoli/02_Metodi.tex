@@ -2,44 +2,49 @@
 \label{cha:Metodi}
 
 Tutti i dati sono stati raccolti da analisi ecografiche effettuate presso l'\textbf{Azienda
-Ospedaliera Universitaria di Parma}, nel periodo tra \textbf{Aprile 2022} e \textbf{Gennaio 2023} da
+	Ospedaliera Universitaria di Parma}, nel periodo tra \textbf{Aprile 2022} e \textbf{Gennaio 2023} da
 un team di \textbf{medici esperti}. Per standardizzare le immagini raccolte, sono stati applicati i
 seguenti parametri:
 
 \begin{itemize}
-    \item Indice di massa corporea (BMI)
-    \item Età
-    \item Problematiche durante la gravidanza
-    \item Problematiche dopo la gravidanza
-    \item Femore centrato nell'inquadratura
+	\item Indice di massa corporea (BMI)
+	\item Età
+	\item Problematiche durante la gravidanza
+	\item Problematiche dopo la gravidanza
+	\item Femore centrato nell'inquadratura
 \end{itemize}
 
-Le immagini sono state sottoposte a un processo di \textit{preprocessing} per uniformare dimensioni
-e risoluzione, ridimensionandole a \textbf{$1280px$ di larghezza} e \textbf{$876px$ di altezza}.
-Inoltre, considerando che il problema appartiene alla classe di problemi di segmentazione semantica
-binaria, le immagini sono state convertite da \textbf{RGB} a \textbf{scala di grigi} per ridurre la
-complessità e il quantitativo di dati necessari per l'addestramento della rete.
+Le immagini hanno subito un processo di \textit{preprocessing} aggiuntivo per
+uniformare le dimensioni e la risoluzione. In particolare, sono state
+ridimensionate a immagini \textbf{$1280px$ di larghezza} e \textbf{$876px$ di
+	altezza}.
 
-Per ogni immagine, sono state create manualmente delle \textbf{maschere} di segmentazione, fornendo
-un \textit{ground truth} da confrontare con le predizioni del modello. Data la limitata quantità di
-dati disponibili per l'addestramento della U-Net, si è ricorsi a tecniche di \textit{data
-augmentation}, applicate casualmente a ogni coppia \textbf{immagine-maschera}, per aumentare la
-quantità di dati. Le tecniche utilizzate includono:
+Inoltre data la tipologia del problema, si è scelto di convertire le immagine da
+\textbf{RGB} a immagini in \textbf{scala di grigi} per ridurre la complessità del problema
+e per ridurre il quantitativo di dati necessari per l'addestramento della rete.
 
+Sono state realizzate manualmente delle \textbf{maschere} di segmentazione per
+ogni immagine, in modo da avere un \textit{ground truth} da confrontare con le
+predizioni del modello.
+
+Data la scarsa quanti di dati a disposizione per l'addestramento della U-Net, si è scelto
+di utilizzare alcune tecniche di \textit{data augmentation} per aumentare la quantità di
+dati a disposizione. In particolare si è scelto di utilizzare le seguenti tecniche
+applicate in modo casuale per ogni coppia \textbf{immagine-maschera}
 \begin{itemize}
-    \item \textit{Flip} orizzontale e verticale
-    \item \textit{Rotazioni} di $35^{\circ}$
-    \item \textit{Rumore} Gaussiano
+	\item \textit{Flip} orizzontale e verticale
+	\item \textit{Rotazioni} di $35^{\circ}$
+	\item \textit{Rumore} Gaussiano
 \end{itemize}
 
 Queste tecniche hanno migliorato notevolmente le segmentazioni ottenute tramite la rete U-Net,
 aumentando la robustezza della rete alle variazioni di luce e al rumore nelle immagini.
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Immagini/data_augmentation_train.png}
-    \caption{Immagini utilizzate per l'addestramento}
-    \label{fig:data_augmentation_train}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Immagini/data_augmentation_train.png}
+	\caption{Immagini utilizzate per l'addestramento}
+	\label{fig:data_augmentation_train}
 \end{figure}
 
 L'efficacia della \textit{data augmentation} nella fase di addestramento del modello è evidente,
@@ -53,17 +58,17 @@ le immagini contenute nel \textit{test set} e nel \textit{validation set} sono r
 
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Immagini/data_augmentation_test.png}
-    \caption{Immagini utilizzate nel test set}
-    \label{fig:data_augmentation_test}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Immagini/data_augmentation_test.png}
+	\caption{Immagini utilizzate nel test set}
+	\label{fig:data_augmentation_test}
 \end{figure}
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{Immagini/data_augmentation_val.png}
-    \caption{Immagini utilizzate nel validation set}
-    \label{fig:data_augmentation_val}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Immagini/data_augmentation_val.png}
+	\caption{Immagini utilizzate nel validation set}
+	\label{fig:data_augmentation_val}
 \end{figure}
 
 È fondamentale che i set di test e validazione riflettano accuratamente le condizioni reali di
@@ -108,37 +113,46 @@ convoluzionale specificamente progettata per la segmentazione semantica di immag
 cui ogni singolo pixel dell'immagine è classificato in una delle categorie pertinenti al problema
 analizzato.
 
-La rete convoluzionale derivata da questo studio rimane una delle più impiegate nel settore medico
-per la segmentazione semantica, grazie alle sue notevoli prestazioni e versatilità.
-L'implementazione iniziale di questo studio si basa fedelmente sul modello proposto da Ronneberger,
-Fischer e Brox, utilizzando il framework \textbf{PyTorch} \cite{pytorch} come piattaforma per lo
-sviluppo della rete.
+Lo studio propone un'architettura di rete neurale convoluzionale per la
+segmentazione semantica di immagini biomediche, classificando ogni singolo pixel
+dell'immagine in una delle varie categorie del problema analizzato, la rete
+convoluzionale emersa da questa analisi rimane tutto' oggi una delle più
+utilizzate in ambito medico per la segmentazione semantica data la sue
+performance e la sua versatilità.
+
+L'implementazione iniziale ricalca il modello realizzato da Olaf Ronneberger,
+Philipp Fischer e Thomas Brox, utilizzando il framework \textbf{PyTorch}
+\cite{pytorch} come base per la realizzazione della rete.
 
 
 \section{Architettura U-Net}
 
-L'architettura proposta da Olaf Ronneberger, Philipp Fischer e Thomas Brox è composta da quattro
-parti principali: 
-\begin{itemize} 
-    \item \textbf{Encoder}: Visionabile graficamente come la parte discendente della U-Net.
-    \item \textbf{Bridge}: Visionabile graficamente come la linea di congiunzione tra la parte
-        discendente e quella ascendente della U-Net.
-    \item \textbf{Decoder}: Visionabile graficamente come la parte ascendente della U-Net.
-    \item \textbf{Output}: Visionabile graficamente come l'ultimo layer della U-Net.
+L'architettura proposta da Olaf Ronneberger, Philipp Fischer e Thomas Brox è
+composta di 4 parti principali:
+\begin{itemize}
+	\item \textbf{Encoder}:
+	      Visionabile graficamente come la parte discendente della U-Net
+	\item \textbf{Bridge}: Visionabile graficamente come la linea di congiunzione fra la
+	      parte discendente e la parte ascendente della U-Net
+	\item \textbf{Decoder}: Visionabile graficamente come la parte ascendente della U-Net
+	\item \textbf{Output}: Visionabile graficamente come l'ultimo layer della U-Net
 \end{itemize}
 
-Le applicazioni basate su modelli derivati dall'architettura U-Net sono ampiamente utilizzate in settori come la medicina e la biologia, particolarmente nella segmentazione di immagini biomediche, come le immagini ecografiche, TC e RM.
+Le applicazioni che si appoggiano a modelli derivati dall'architettura U-net
+dominano settori come la medicina e la biologia, in particolare la segmentazione
+di immagini biomediche, come la segmentazione di immagini ecografiche, la
+segmentazione di immagini TC e la segmentazione di immagini RM.
 
 I motivi principali del successo di U-Net includono:
-\begin{itemize} 
-    \item \textbf{Segmentazione dettagliata}: U-Net è capace di produrre segmentazioni dettagliate e
-        precise grazie alle sue innovative "skip connections", che consentono al modello di
-        catturare sia i dettagli di basso livello che il contesto di alto livello.
-    \item \textbf{Architettura compatta}: Nonostante la sua elevata capacità di dettaglio, il
-        modello rimane relativamente snello e può essere addestrato con successo anche con dataset
-        di dimensioni moderate.
-    \item \textbf{Adattabilità}: Originariamente concepita per applicazioni mediche, U-Net ha
-        dimostrato un'elevata versatilità, adattandosi a una vasta gamma di applicazioni.
+\begin{itemize}
+	\item \textbf{Segmentazione dettagliata}: U-Net è capace di produrre segmentazioni dettagliate e
+	      precise grazie alle sue innovative "skip connections", che consentono al modello di
+	      catturare sia i dettagli di basso livello che il contesto di alto livello.
+	\item \textbf{Architettura compatta}: Nonostante la sua elevata capacità di dettaglio, il
+	      modello rimane relativamente snello e può essere addestrato con successo anche con dataset
+	      di dimensioni moderate.
+	\item \textbf{Adattabilità}: Originariamente concepita per applicazioni mediche, U-Net ha
+	      dimostrato un'elevata versatilità, adattandosi a una vasta gamma di applicazioni.
 \end{itemize}
 
 Tuttavia, come ogni modello, U-Net presenta anche alcuni svantaggi. Il principale riguarda la
@@ -155,23 +169,28 @@ La convoluzione è una delle operazioni fondamentali utilizzate nelle reti neura
 (CNN) per estrarre le caratteristiche significative da un'input. Essa impiega un filtro (o kernel)
 che viene applicato sull'input.
 
-Il processo di convoluzione consiste nel sommare ogni elemento di un'immagine con i suoi vicini,
-pesando ogni operazione mediante l'utilizzo del filtro. La feature map di uscita viene calcolata
-come segue:
+La convoluzione è una delle operazioni fondamentali utilizzate nelle reti
+neurali convoluzionali per estrarre le caratteristiche significative da un'
+input, la convoluzione coinvolge un filtro (o kernel) e l'input su cui si
+applica.
+
+Il processo di convoluzione consiste nell sommare ogni elemento di un'immagine
+al suo vicino, pesando ogni singola operazione mediante l'utilizzo del filtro(o
+kernel) il calcolo della feature map di uscita è calcolata come segue:
 \begin{align}
-  &\Bigg( \begin{bmatrix}
-    a & b & c \\
-    d & e & f \\
-    g & h & i
-  \end{bmatrix}
-  *
-  \begin{bmatrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9
-  \end{bmatrix}
-  \Bigg) [2, 2] =\\
-  &= (i \cdot 1) + (h \cdot 2) + (g \cdot 3) + (f \cdot 4) + (e \cdot 5) + (d \cdot 6) + (c \cdot 7) + (b \cdot 8) + (a \cdot 9)
+	 & \Bigg( \begin{bmatrix}
+		          a & b & c \\
+		          d & e & f \\
+		          g & h & i
+	          \end{bmatrix}
+	*
+	\begin{bmatrix}
+		1 & 2 & 3 \\
+		4 & 5 & 6 \\
+		7 & 8 & 9
+	\end{bmatrix}
+	\Bigg) [2, 2] =                                                                                                                  \\
+	 & = (i \cdot 1) + (h \cdot 2) + (g \cdot 3) + (f \cdot 4) + (e \cdot 5) + (d \cdot 6) + (c \cdot 7) + (b \cdot 8) + (a \cdot 9)
 \end{align}
 
 
@@ -181,10 +200,11 @@ come segue:
 Il \textit{max pooling} è un'operazione chiave all'interno delle reti neurali convoluzionali (CNN),
 inclusa la rete U-Net.
 
-Questa tecnica è utilizzata per ridurre la dimensione delle feature map, contribuendo a diminuire la
-complessità computazionale del problema. Il \textit{max pooling} aumenta la resistenza della rete
-all'\textit{overfitting}, migliora la capacità di generalizzazione del modello e consente di
-ottenere una rappresentazione più invariante rispetto alle piccole variazioni spaziali nell'input.
+Il \textit{max pooling} è utilizzato per ridurre la dimensione delle feature
+map, consentendo di ridurre la complessità del problema da approssimare,
+comportando una maggior resistenza al \textit{overfitting}, migliorando la
+capacit\'a di generalizzazione del modello e di ottenere una rappresentazione
+più invariante rispetto alle piccole variazioni spaziali nell'input.
 
 
 \subsection{Encoder}
@@ -197,12 +217,12 @@ dell'immagine, aumentando contemporaneamente il numero di canali delle \textit{f
 
 Nello specifico, la fase di \textit{encoding} comprende tre componenti principali:
 \begin{itemize}
-  \item \textbf{Strato iniziale}: Questo strato applica diverse operazioni di convoluzione ai dati
-      di input per estrarre caratteristiche di basso livello, come bordi e texture.
-  \item \textbf{Downsampling}: Successivamente, si utilizzano operazioni di max pooling o
-      convoluzione con un passo (stride) superiore a 1 per ridurre la dimensione delle feature map.
-  \item \textbf{Strati intermedi}: Questi strati applicano ulteriori operazioni di convoluzione per
-      catturare caratteristiche di complessità crescente.
+	\item \textbf{Strato iniziale}: Questo strato applica diverse operazioni di convoluzione ai dati
+	      di input per estrarre caratteristiche di basso livello, come bordi e texture.
+	\item \textbf{Downsampling}: Successivamente, si utilizzano operazioni di max pooling o
+	      convoluzione con un passo (stride) superiore a 1 per ridurre la dimensione delle feature map.
+	\item \textbf{Strati intermedi}: Questi strati applicano ulteriori operazioni di convoluzione per
+	      catturare caratteristiche di complessità crescente.
 \end{itemize}
 
 
@@ -213,10 +233,9 @@ La fase di \textit{decoding} nella rete U-Net è incaricata di ricostruire l'imm
 partire dalle informazioni estratte durante la fase di \textit{encoding}. Le fasi principali del
 decoder includono:
 \begin{itemize}
-  \item \textbf{Upsampling}: Per ripristinare gradualmente la dimensione originale delle feature map.
-  \item \textbf{Skip Connections}: Per combinare informazioni multi-scala.
-  \item \textbf{Convoluzione nel Decoding}: Per affinare ulteriormente le feature map dopo
-      l'upsampling e l'integrazione delle skip connections.
+	\item \textbf{Upsampling}: La fase di decoding inizia con l'operazione di upsampling, che serve a ripristinare gradualmente la dimensione delle feature map ai livelli originali dell'immagine. Ciò viene fatto utilizzando operazioni come la trasposta della convoluzione (de convoluzione) o l'interpolazione bilineare. L'obiettivo è ottenere feature map di dimensioni compatibili con quelle dell'immagine di input.
+	\item \textbf{Skip Connections}: Un aspetto distintivo della U-Net sono le skip connections, o connessioni di salto. Queste connessioni collegano le feature map estratte durante l'encoding alle corrispondenti feature map nella fase di decoding. Ciò consente di combinare informazioni multi-scala, in modo che il modello possa accedere sia a dettagli fini che a contesto di alto livello. Le skip connections sono fondamentali per migliorare la precisione della segmentazione.
+	\item \textbf{Convoluzione nel Decoding}: Dopo l' upsampling e l'integrazione delle skip connections, vengono applicate operazioni di convoluzione per raffinare ulteriormente le feature map. Queste convoluzioni possono avere lo scopo di "mescolare" le informazioni o di catturare dettagli specifici a livelli più alti.
 \end{itemize}
 
 \subsection{Bridge}
@@ -263,67 +282,67 @@ memoria.
 Di conseguenza, si è deciso di modificare le fasi di \textit{encoding} e \textit{decoding} come segue:
 
 \begin{table}[!ht]
-    \centering
-    \begin{tabular}{|c|c|c|}
-        \hline
-        \textbf{Layer} & \textbf{In channels} & \textbf{Out channels} \\
-        \hline
-        \hline
-        Encoder        & 1                    & 64                    \\
-        \hline
-        Encoder        & 64                   & 128                   \\
-        \hline
-        Encoder        & 128                  & 256                   \\
-        \hline
-        Encoder        & 256                  & 512                   \\
-        \hline
-        Decoder        & 1024                 & 512                   \\
-        \hline
-        Decoder        & 512                  & 256                   \\
-        \hline
-        Decoder        & 256                  & 128                   \\
-        \hline
-        Decoder        & 128                  & 64                    \\
-        \hline
-    \end{tabular}
-    \caption{Encoding e Decoding originali}
-    \label{tab:encoding_originale}
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Layer} & \textbf{In channels} & \textbf{Out channels} \\
+		\hline
+		\hline
+		Encoder        & 1                    & 64                    \\
+		\hline
+		Encoder        & 64                   & 128                   \\
+		\hline
+		Encoder        & 128                  & 256                   \\
+		\hline
+		Encoder        & 256                  & 512                   \\
+		\hline
+		Decoder        & 1024                 & 512                   \\
+		\hline
+		Decoder        & 512                  & 256                   \\
+		\hline
+		Decoder        & 256                  & 128                   \\
+		\hline
+		Decoder        & 128                  & 64                    \\
+		\hline
+	\end{tabular}
+	\caption{Encoding e Decoding originali}
+	\label{tab:encoding_originale}
 \end{table}
 
 \begin{table}[!ht]
-    \centering
-    \begin{tabular}{|c|c|c|}
-        \hline
-        \textbf{Layer} & \textbf{In channels} & \textbf{Out channels} \\
-        \hline
-        \hline
-        Encoder        & 1                    & 16                    \\
-        \hline
-        Encoder        & 16                   & 32                    \\
-        \hline
-        Encoder        & 32                   & 64                    \\
-        \hline
-        Encoder        & 64                   & 128                   \\
-        \hline
-        Encoder        & 128                  & 256                   \\
-        \hline
-        Encoder        & 256                  & 512                   \\
-        \hline
-        Decoder        & 1024                 & 512                   \\
-        \hline
-        Decoder        & 512                  & 256                   \\
-        \hline
-        Decoder        & 256                  & 128                   \\
-        \hline
-        Decoder        & 128                  & 64                    \\
-        \hline
-        Decoder        & 64                   & 32                    \\
-        \hline
-        Decoder        & 32                   & 16                    \\
-        \hline
-    \end{tabular}
-    \caption{Encoding e Decoding modificati}
-    \label{tab:encoding_modificato}
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Layer} & \textbf{In channels} & \textbf{Out channels} \\
+		\hline
+		\hline
+		Encoder        & 1                    & 16                    \\
+		\hline
+		Encoder        & 16                   & 32                    \\
+		\hline
+		Encoder        & 32                   & 64                    \\
+		\hline
+		Encoder        & 64                   & 128                   \\
+		\hline
+		Encoder        & 128                  & 256                   \\
+		\hline
+		Encoder        & 256                  & 512                   \\
+		\hline
+		Decoder        & 1024                 & 512                   \\
+		\hline
+		Decoder        & 512                  & 256                   \\
+		\hline
+		Decoder        & 256                  & 128                   \\
+		\hline
+		Decoder        & 128                  & 64                    \\
+		\hline
+		Decoder        & 64                   & 32                    \\
+		\hline
+		Decoder        & 32                   & 16                    \\
+		\hline
+	\end{tabular}
+	\caption{Encoding e Decoding modificati}
+	\label{tab:encoding_modificato}
 \end{table}
 
 L'intento di questa modifica è sfruttare la capacità di estrazione di feature delle operazioni di
@@ -340,65 +359,74 @@ feature map.
 
 Per valutare le prestazioni del modello nel contesto del task di segmentazione, si è scelto di
 utilizzare la metrica \textit{Dice BCE Loss} per la funzione di perdita e \textit{Intersection over
-Union (IoU)} per misurare l'accuratezza.
+	Union (IoU)} per misurare l'accuratezza.
 
 \subsection{Dice BCE Loss}
 \begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.7\columnwidth]{Immagini/dice_loss.png}
-  \caption{Rappresentazione della Dice Loss}
-  \label{fig:dice_loss}
+	\centering
+	\includegraphics[width=0.7\columnwidth]{Immagini/dice_loss.png}
+	\caption{Rappresentazione della Dice Loss}
+	\label{fig:dice_loss}
 \end{figure}
 
-La \textit{Dice Loss} è una funzione di perdita basata sul coefficiente di Dice, che misura la
-somiglianza tra due campioni. Questa metrica è particolarmente utile in contesti dove la regione di
-interesse occupa una porzione limitata dell'immagine, come spesso accade nelle immagini mediche. Il
-coefficiente di Dice è definito come segue:
+La Dice Loss è una metrica di perdita basata sul coefficiente di Dice, che è una
+misura della somiglianza tra due campioni. È particolarmente utile per i dati
+non bilanciati, come è spesso il caso nelle immagini mediche dove la regione di
+interesse occupa una piccola parte dell'immagine. Il coefficiente di Dice è
+definito dal' equazione \ref{eq:dice_loss}.
 
 La \textit{Binary Cross-Entropy (BCE) Loss} è ampiamente usata nei problemi di classificazione
 binaria, specialmente quando i dati di output sono probabilità che variano tra 0 e 1. Questa metrica
 valuta quanto le predizioni del modello si discostino dai valori reali (etichette).
 
 \begin{align}
-    L & = L_{\text{Dice}} + L_{\text{BCE}}
-    \label{eq:dice_bce_loss}
+	L & = L_{\text{Dice}} + L_{\text{BCE}}
+	\label{eq:dice_bce_loss}
 \end{align}
 
 \begin{align}
-    L_{\text{Dice}} & = 1 - \frac{2\sum_i^N p_i g_i + \varepsilon}{\sum_i^N p_i^2 + \sum_i^N g_i^2 + \varepsilon}
-    \label{eq:dice_loss}
+	L_{\text{Dice}} & = 1 - \frac{2\sum_i^N p_i g_i + \varepsilon}{\sum_i^N p_i^2 + \sum_i^N g_i^2 + \varepsilon}
+	\label{eq:dice_loss}
 \end{align}
 
 \begin{align}
-    L_{\text{BCE}} & = -\frac{1}{N} \Bigg[ \sum_{i=1}^N g_i \log(p_i) + (1 - g_i) \log(1 - p_i) \Bigg]
-    \label{eq:bce_loss}
+	L_{\text{BCE}} & = -\frac{1}{N} \Bigg[ \sum_{i=1}^N g_i \log(p_i) + (1 - g_i) \log(1 - p_i) \Bigg]
+	\label{eq:bce_loss}
 \end{align}
 
 Dunque, la \textit{loss} totale viene calcolata mediante:
 \begin{align}
-    L & = 1 - \frac{2\sum_i^N p_i g_i + \varepsilon}{\sum_i^N p_i^2 + \sum_i^N g_i^2 + \varepsilon} -\frac{1}{N} \Bigg[ \sum_{i=1}^N g_i \log(p_i) + (1 - g_i) \log(1 - p_i) \Bigg]
-    \label{eq:dice_bce_loss_complete}
+	L & = 1 - \frac{2\sum_i^N p_i g_i + \varepsilon}{\sum_i^N p_i^2 + \sum_i^N g_i^2 + \varepsilon} -\frac{1}{N} \Bigg[ \sum_{i=1}^N g_i \log(p_i) + (1 - g_i) \log(1 - p_i) \Bigg]
+	\label{eq:dice_bce_loss_complete}
 \end{align}
 Dove:
 \begin{itemize}
-    \item $p_i$ rappresenta la probabilità predetta dal modello per il pixel $i$.
-    \item $g_i$ è il valore di \textit{ground truth} per il pixel $i$.
+	\item $p_i$ rappresenta la probabilità predetta dal modello per il pixel $i$.
+	\item $g_i$ è il valore di \textit{ground truth} per il pixel $i$.
 \end{itemize}
 
-
-\subsection{Intersection over Union (IoU)}
-\label{subsec:intersection_over_union}
-
-Per valutare l'accuratezza della segmentazione, è stata impiegata la metrica \textit{Intersection
-over Union} (IoU), che è un indicatore efficace della capacità di segmentazione del modello. L'IoU
-calcola il rapporto tra l'area di intersezione e l'area di unione delle maschere predette e di
-\textit{ground truth}. La formula è la seguente:
+\subsection{Intersection over Union(IoU)}
+Per la metrica dell'accuratezza della segmentazione, è stata utilizzata la metrica \textit{Intersection over Union} (IoU),
+poiché è una metrica che permette di valutare la capacità di segmentazione del modello
+facendo il rapporto tra l'area di intersezione tra la maschera predetta e quella di \textit{ground truth} e l'area di unione tra le due maschere, formalmente:
 \begin{align}
-    \text{IoU} & = \frac{\text{TP}}{\text{TP} + \text{FP} + \text{FN}}
-    \label{eq:iou}
+	\text{IoU} & = \frac{\text{TP}}{\text{TP} + \text{FP} + \text{FN}}
+	\label{eq:iou}
 \end{align}
-Dove \textbf{TP} rappresenta i \textit{True Positive}, \textbf{FP} i \textit{False Positive}, e
-\textbf{FN} i \textit{False Negative}.
+
+Dove \textbf{TP} è il numero di \textit{True Positive}, \textbf{FP} è il numero
+di \textit{False Positive} e \textbf{FN} è il numero di \textit{False
+	Negative}.
+
+\section{Validazione del modello}
+
+La \textit{cross-validation} (validazione incrociata) è una tecnica
+fondamentale nell'ambito del machine learning e dell'addestramento di modelli
+predittivi. Essenzialmente, la cross-validation è un metodo per valutare le
+prestazioni di un modello in modo robusto, valutandolo su più insiemi di dati
+per ottenere stime più affidabili delle sue capacità predittive. Questo
+processo aiuta a mitigare il rischio di overfitting e offre una migliore
+comprensione delle prestazioni del modello.
 
 
 \section{Validazione del Modello}
@@ -410,11 +438,12 @@ del modello su più insiemi di dati per ottenere stime più affidabili delle sue
 contribuendo a mitigare il rischio di overfitting.
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Immagini/cross_validation.png}
-    \caption{Rappresentazione grafica della Cross-validation}
-    \label{fig:cross_validation}
+	\centering
+	\includegraphics[width=0.7\textwidth]{Immagini/cross_validation.png}
+	\caption{Rappresentazione grafica della Cross-validation}
+	\label{fig:cross_validation}
 \end{figure}
 
-La cross-validation fornisce stime più affidabili delle prestazioni del modello, riducendo il
-rischio che le valutazioni delle prestazioni siano influenzate da una singola suddivisione dei dati.
+Fornisce stime più affidabili delle prestazioni del modello, riducendo il
+rischio di ottenere stime di prestazioni spurie a causa di una singola
+divisione dei dati.
