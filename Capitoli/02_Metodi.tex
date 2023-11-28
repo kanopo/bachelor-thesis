@@ -166,7 +166,7 @@ immagini ad alta risoluzione.
 \label{sec:convoluzione}
 
 La convoluzione è una delle operazioni fondamentali utilizzate nelle reti neurali convoluzionali
-(CNN) per estrarre le caratteristiche significative da un'input. Essa impiega un filtro (o kernel)
+(CNN) per estrarre le caratteristiche significative da un' input. Essa impiega un filtro (o kernel)
 che viene applicato sull'input.
 
 La convoluzione è una delle operazioni fondamentali utilizzate nelle reti
@@ -174,7 +174,7 @@ neurali convoluzionali per estrarre le caratteristiche significative da un'
 input, la convoluzione coinvolge un filtro (o kernel) e l'input su cui si
 applica.
 
-Il processo di convoluzione consiste nell sommare ogni elemento di un'immagine
+Il processo di convoluzione consiste nel sommare ogni elemento di un'immagine
 al suo vicino, pesando ogni singola operazione mediante l'utilizzo del filtro(o
 kernel) il calcolo della feature map di uscita è calcolata come segue:
 \begin{align}
@@ -234,7 +234,7 @@ partire dalle informazioni estratte durante la fase di \textit{encoding}. Le fas
 decoder includono:
 \begin{itemize}
 	\item \textbf{Upsampling}: La fase di decoding inizia con l'operazione di upsampling, che serve a ripristinare gradualmente la dimensione delle feature map ai livelli originali dell'immagine. Ciò viene fatto utilizzando operazioni come la trasposta della convoluzione (de convoluzione) o l'interpolazione bilineare. L'obiettivo è ottenere feature map di dimensioni compatibili con quelle dell'immagine di input.
-	\item \textbf{Skip Connections}: Un aspetto distintivo della U-Net sono le skip connections, o connessioni di salto. Queste connessioni collegano le feature map estratte durante l'encoding alle corrispondenti feature map nella fase di decoding. Ciò consente di combinare informazioni multi-scala, in modo che il modello possa accedere sia a dettagli fini che a contesto di alto livello. Le skip connections sono fondamentali per migliorare la precisione della segmentazione.
+	\item \textbf{Skip Connections}: Un aspetto distintivo della U-Net sono le skip connections, o connessioni di salto. Queste connessioni collegano le feature map estratte durante l' encoding alle corrispondenti feature map nella fase di decoding. Ciò consente di combinare informazioni multi-scala, in modo che il modello possa accedere sia a dettagli fini che a contesto di alto livello. Le skip connections sono fondamentali per migliorare la precisione della segmentazione.
 	\item \textbf{Convoluzione nel Decoding}: Dopo l' upsampling e l'integrazione delle skip connections, vengono applicate operazioni di convoluzione per raffinare ulteriormente le feature map. Queste convoluzioni possono avere lo scopo di "mescolare" le informazioni o di catturare dettagli specifici a livelli più alti.
 \end{itemize}
 

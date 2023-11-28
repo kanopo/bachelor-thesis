@@ -10,10 +10,10 @@ questo contesto di apprendimento supervisionato, al modello sono state fornite i
 insieme alle loro corrispondenti segmentazioni effettuate manualmente.
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.7\columnwidth]{Immagini/training.png}
-    \caption{Processo di addestramento del modello}
-    \label{fig:addestramento_del_modello}
+	\centering
+	\includegraphics[width=0.7\columnwidth]{Immagini/training.png}
+	\caption{Processo di addestramento del modello}
+	\label{fig:addestramento_del_modello}
 \end{figure}
 
 L'addestramento è stato eseguito per 5 iterazioni, utilizzando un fold diverso in ciascuna
@@ -22,38 +22,38 @@ cinque iterazioni.
 
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.4\columnwidth]{Immagini/fold_0_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_0_accuracy.png}
-    \caption{Errore e accuratezza della prima porzione di dati}
-    \label{fig:loss e accuratezza della prima porzione di dati}
+	\centering
+	\includegraphics[width=0.4\columnwidth]{Immagini/fold_0_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_0_accuracy.png}
+	\caption{Errore e accuratezza della prima porzione di dati}
+	\label{fig:loss e accuratezza della prima porzione di dati}
 \end{figure}
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.4\columnwidth]{Immagini/fold_1_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_1_accuracy.png}
-    \caption{Errore e accuratezza della seconda porzione di dati}
-    \label{fig:loss e accuratezza della seconda porzione di dati}
+	\centering
+	\includegraphics[width=0.4\columnwidth]{Immagini/fold_1_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_1_accuracy.png}
+	\caption{Errore e accuratezza della seconda porzione di dati}
+	\label{fig:loss e accuratezza della seconda porzione di dati}
 \end{figure}
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.4\columnwidth]{Immagini/fold_2_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_2_accuracy.png}
-    \caption{Errore e accuratezza della terza porzione di dati}
-    \label{fig:loss e accuratezza della terza porzione di dati}
+	\centering
+	\includegraphics[width=0.4\columnwidth]{Immagini/fold_2_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_2_accuracy.png}
+	\caption{Errore e accuratezza della terza porzione di dati}
+	\label{fig:loss e accuratezza della terza porzione di dati}
 \end{figure}
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.4\columnwidth]{Immagini/fold_3_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_3_accuracy.png}
-    \caption{Errore e accuratezza della quarta porzione di dati}
-    \label{fig:loss e accuratezza della quarta porzione di dati}
+	\centering
+	\includegraphics[width=0.4\columnwidth]{Immagini/fold_3_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_3_accuracy.png}
+	\caption{Errore e accuratezza della quarta porzione di dati}
+	\label{fig:loss e accuratezza della quarta porzione di dati}
 \end{figure}
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.4\columnwidth]{Immagini/fold_4_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_4_accuracy.png}
-    \caption{Errore e accuratezza della quinta porzione di dati}
-    \label{fig:loss e accuratezza della quinta porzione di dati}
+	\centering
+	\includegraphics[width=0.4\columnwidth]{Immagini/fold_4_loss.png} \includegraphics[width=0.4\columnwidth]{Immagini/fold_4_accuracy.png}
+	\caption{Errore e accuratezza della quinta porzione di dati}
+	\label{fig:loss e accuratezza della quinta porzione di dati}
 \end{figure}
 
 
@@ -75,47 +75,28 @@ dal modello e la differenze nella classificazione dei pixel tra le due segmentaz
 
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.6\columnwidth]{Immagini/image.png}
-    \caption{Immagine originale}
-    \label{fig:immagine originale}
+	\centering
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Immagini/image.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Immagini/mask.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Immagini/prediction.png}
+	\end{minipage}
+
+	\caption{Immagine originale, segmentazione manuale e segmentazione del modello}
+	\label{fig:immagine originale, segmentazione manuale e segmentazione del modello}
 \end{figure}
 
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.6\columnwidth]{Immagini/mask.png}
-    \caption{Segmentazione manuale}
-    \label{fig:segmentazione_manuale}
-\end{figure}
 
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.6\columnwidth]{Immagini/prediction.png}
-    \caption{Segmentazione del modello}
-    \label{fig:segmentazione_del_modello}
-\end{figure}
-% \begin{figure}[!ht]
-%     \centering
-%     \begin{minipage}{0.4\columnwidth}
-%         \centering
-%         \includegraphics[width=\linewidth]{Immagini/mask.png}
-%         \caption{Segmentazione manuale}
-%         \label{fig:segmentazione manuale}
-%     \end{minipage}
-%     \hfill
-%     \begin{minipage}{0.4\columnwidth}
-%         \centering
-%         \includegraphics[width=\linewidth]{Immagini/prediction.png}
-%         \caption{Segmentazione del modello}
-%         \label{fig:segmentazione del modello}
-%     \end{minipage}
-% \end{figure}
-
-% Per sostenere la tesi che il modello riesca a segmentare correttamente le immagini, \`e stata
-% calcolata la distribuzione dei pixel per confrontare la segmentazione manuale con quella del
-% modello.
 
 Per confermare l'efficacia del modello nella segmentazione delle immagini, si è proceduto con
 l'analisi della distribuzione dei pixel. Questa analisi confronta direttamente la segmentazione
@@ -123,44 +104,27 @@ manuale con quella ottenuta dal modello. L'obiettivo è dimostrare che la distri
 nelle segmentazioni del modello corrisponde strettamente a quella delle segmentazioni manuali,
 indicando così una segmentazione accurata.
 
-% \begin{figure}[!ht]
-%     \centering
-%     \begin{minipage}{0.45\columnwidth}
-%         \centering
-%         \includegraphics[width=\linewidth]{Immagini/handmade_scaled_hist.png}
-%         \caption{Distribuzione Intensità dei pixel della segmentazione manuale}
-%         \label{fig:distribuzione intensità dei pixel della segmentazione manuale}
-%     \end{minipage}
-%     \hfill
-%     \begin{minipage}{0.45\columnwidth}
-%         \centering
-%         \includegraphics[width=\linewidth]{Immagini/model_scaled_hist.png}
-%         \caption{Distribuzione Intensità dei pixel della segmentazione del modello}
-%         \label{fig:distribuzione intensità dei pixel della segmentazione del modello}
-%     \end{minipage}
-% \end{figure}
-
 
 \begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.6\linewidth]{Immagini/handmade_scaled_hist.png}
-        \caption{Distribuzione Intensità dei pixel della segmentazione manuale}
-        \label{fig:distribuzione intensità dei pixel della segmentazione manuale}
+	\centering
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Immagini/handmade_scaled_hist.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{Immagini/model_scaled_hist.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\columnwidth]{Immagini/handmade_vs_model_scaled.png}
+	\end{minipage}
+	\caption{Distribuzione Intensità dei pixel della segmentazione manuale, della segmentazione del modello e confronto tra le due}
+	\label{fig:distribuzione intensità dei pixel della segmentazione manuale, della segmentazione del modello e confronto tra le due}
 \end{figure}
 
-\begin{figure}[!ht]
-        \centering
-        \includegraphics[width=0.6\linewidth]{Immagini/model_scaled_hist.png}
-        \caption{Distribuzione Intensità dei pixel della segmentazione del modello}
-        \label{fig:distribuzione intensità dei pixel della segmentazione del modello}
-\end{figure}
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.6\columnwidth]{Immagini/handmade_vs_model_scaled.png}
-    \caption{Confronto tra la segmentazione manuale e quella del modello}
-    \label{fig:confronto tra la segmentazione manuale e quella del modello}
-\end{figure}
 
 I risultati mostrano che la distribuzione dei pixel nelle segmentazioni generate dal modello si
 allinea strettamente a quella delle segmentazioni manuali, suggerendo che il modello è in grado di
@@ -195,28 +159,85 @@ Sono state fornite al modello alcune immagini acquisite dal nuovo ecografo. Ques
 nessun tipo di elaborazione, ma sono state direttamente segmentate dal modello.
 
 
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/0_image.png}
+% 	\includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/3_image.png}
+% 	\caption{Immagine Originale}
+% 	\label{fig:immagine_originale}
+% \end{figure}
+%
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/0_mask.png}
+% 	\includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/3_mask.png}
+% 	\caption{Maschera di segmentazione ottenuta dal modello}
+% 	\label{fig:maschera}
+% \end{figure}
+%
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/0_extracted_femur.png}
+% 	\includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/3_extracted_femur.png}
+% 	\caption{Risultato finale a seguito dell'estrazione del femore}
+% 	\label{fig:segmentazione_modello}
+% \end{figure}
+
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/0_image.png}
-    \includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/3_image.png}
-    \caption{Immagine Originale}
-    \label{fig:immagine_originale}
+	\centering
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/0_image.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/0_mask.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/0_extracted_femur.png}
+	\end{minipage}
+	\caption{Immagine Originale, Maschera di segmentazione ottenuta dal modello e Risultato finale a seguito dell'estrazione del femore}
 \end{figure}
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/0_mask.png}
-    \includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/3_mask.png}
-    \caption{Maschera di segmentazione ottenuta dal modello}
-    \label{fig:maschera}
+	\centering
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/4_image.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/4_mask.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/4_extracted_femur.png}
+	\end{minipage}
+	\caption{Immagine Originale, Maschera di segmentazione ottenuta dal modello e Risultato finale a seguito dell'estrazione del femore}
 \end{figure}
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/0_extracted_femur.png}
-    \includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/3_extracted_femur.png}
-    \caption{Risultato finale a seguito dell'estrazione del femore}
-    \label{fig:segmentazione_modello}
+	\centering
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/3_image.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/3_mask.png}
+	\end{minipage}
+	\hfill % ensures equal spacing
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/3_extracted_femur.png}
+	\end{minipage}
+	\caption{Immagine Originale, Maschera di segmentazione ottenuta dal modello e Risultato finale a seguito dell'estrazione del femore}
 \end{figure}
 
 \subsection{Analisi della Distribuzione dei Valori}
@@ -225,11 +246,11 @@ Abbiamo inoltre esaminato la distribuzione dei valori nelle immagini acquisite d
 per comprendere meglio come il modello gestisce le nuove informazioni.
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/hist_0_distribution_value.csv.png}
-    \includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/hist_3_distribution_value.csv.png}
-    \caption{Distribuzione dei Valori}
-    \label{fig:distribuzione_valori}
+	\centering
+	\includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/hist_0_distribution_value.csv.png}
+	\includegraphics[width=0.45\textwidth]{./Immagini/nuovo_ecografo_results/hist_3_distribution_value.csv.png}
+	\caption{Distribuzione dei Valori}
+	\label{fig:distribuzione_valori}
 \end{figure}
 
 \subsection{Risultati Quantitativi}
@@ -238,28 +259,28 @@ Di seguito sono riportati i risultati quantitativi derivanti dall'analisi delle 
 ecografo.
 
 \begin{table}[ht]
-    \centering
-    \begin{tabular}{|l|c|c|}
-    \hline
-        \textbf{Immagine} & \textbf{Media} & \textbf{Deviazione Standard} \\ 
-        \hline
-        \hline
-        0  & 128.225 & 47.961 \\ \hline
-        1  & 119.319 & 46.750 \\ \hline
-        2  & 175.710 & 41.832 \\ \hline
-        3  & 141.379 & 47.968 \\ \hline
-        4  & 129.142 & 50.137 \\ \hline
-        5  & 91.6911 & 38.671 \\ \hline
-        6  & 110.249 & 48.143 \\ \hline
-        7  & 115.113 & 43.262 \\ \hline
-        8  & 155.277 & 51.628 \\ \hline
-        9  & 114.937 & 53.817 \\ \hline
-        10 & 145.433 & 57.311 \\ \hline
-        11 & 152.924 & 51.922 \\ \hline
-        12 & 128.146 & 53.493 \\ \hline
-    \end{tabular}
-    \caption{Risultati Sperimentali}
-    \label{tab:risultati_sperimentali}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		\textbf{Immagine} & \textbf{Media} & \textbf{Deviazione Standard} \\
+		\hline
+		\hline
+		0                 & 128.225        & 47.961                       \\ \hline
+		1                 & 119.319        & 46.750                       \\ \hline
+		2                 & 175.710        & 41.832                       \\ \hline
+		3                 & 141.379        & 47.968                       \\ \hline
+		4                 & 129.142        & 50.137                       \\ \hline
+		5                 & 91.6911        & 38.671                       \\ \hline
+		6                 & 110.249        & 48.143                       \\ \hline
+		7                 & 115.113        & 43.262                       \\ \hline
+		8                 & 155.277        & 51.628                       \\ \hline
+		9                 & 114.937        & 53.817                       \\ \hline
+		10                & 145.433        & 57.311                       \\ \hline
+		11                & 152.924        & 51.922                       \\ \hline
+		12                & 128.146        & 53.493                       \\ \hline
+	\end{tabular}
+	\caption{Risultati Sperimentali}
+	\label{tab:risultati_sperimentali}
 \end{table}
 
 \subsection{Discussione}
