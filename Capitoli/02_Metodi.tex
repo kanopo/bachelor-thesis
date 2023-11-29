@@ -3,8 +3,8 @@
 
 Tutti i dati sono stati raccolti da analisi ecografiche effettuate presso l'\textbf{Azienda
 	Ospedaliera Universitaria di Parma}, nel periodo tra \textbf{Aprile 2022} e \textbf{Gennaio 2023} da
-un team di \textbf{medici esperti}. Per standardizzare le immagini raccolte, sono stati applicati i
-seguenti parametri:
+un team di medici. Per standardizzare le immagini raccolte, sono stati applicati i
+seguenti parametri per la standardizzazione dell'immagine:
 
 \begin{itemize}
 	\item Indice di massa corporea (BMI)
@@ -40,7 +40,7 @@ applicate in modo casuale per ogni coppia \textbf{immagine-maschera}
 Queste tecniche hanno migliorato notevolmente le segmentazioni ottenute tramite la rete U-Net,
 aumentando la robustezza della rete alle variazioni di luce e al rumore nelle immagini.
 
-\begin{figure}
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Immagini/data_augmentation_train.png}
 	\caption{Immagini utilizzate per l'addestramento}
@@ -50,21 +50,20 @@ aumentando la robustezza della rete alle variazioni di luce e al rumore nelle im
 L'efficacia della \textit{data augmentation} nella fase di addestramento del modello è evidente,
 migliorando l'adattabilità a contesti non controllati e la generalizzazione del modello. Come
 mostrato in \autoref{fig:data_augmentation_train}, la \textit{data augmentation} è stata applicata in modo
-casuale per ogni coppia \textbf{immagine-maschera} solo durante l'addestramento, mantenendo
-inalterate le immagini usate per il controllo del modello.
+casuale per ogni coppia \textbf{immagine-maschera}.
 
 Soltanto le immagini utilizzate per l'addestramento sono state sottoposte a \textit{data augmentation},
 le immagini contenute nel \textit{test set} e nel \textit{validation set} sono rimaste invariate.
 
 
-\begin{figure}
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Immagini/data_augmentation_test.png}
 	\caption{Immagini utilizzate nel test set}
 	\label{fig:data_augmentation_test}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Immagini/data_augmentation_val.png}
 	\caption{Immagini utilizzate nel validation set}
@@ -75,10 +74,6 @@ le immagini contenute nel \textit{test set} e nel \textit{validation set} sono r
 utilizzo, per valutare efficacemente le prestazioni del modello. L'introduzione di variazioni
 artificiali tramite data augmentation in questi set potrebbe portare a una valutazione distorta
 delle capacità del modello.
-
-Applicare la data augmentation ai set di test e validazione potrebbe risultare in una valutazione
-imprecisa delle prestazioni del modello, fornendo un'immagine ottimistica ma non realistica della
-sua capacità di generalizzare su dati non modificati.
 
 Mentre la data augmentation durante l'addestramento espone la rete a una varietà maggiore di dati, è
 essenziale valutare la rete su dati non alterati per assicurarsi che abbia imparato a generalizzare
@@ -417,17 +412,6 @@ facendo il rapporto tra l'area di intersezione tra la maschera predetta e quella
 Dove \textbf{TP} è il numero di \textit{True Positive}, \textbf{FP} è il numero
 di \textit{False Positive} e \textbf{FN} è il numero di \textit{False
 	Negative}.
-
-\section{Validazione del modello}
-
-La \textit{cross-validation} (validazione incrociata) è una tecnica
-fondamentale nell'ambito del machine learning e dell'addestramento di modelli
-predittivi. Essenzialmente, la cross-validation è un metodo per valutare le
-prestazioni di un modello in modo robusto, valutandolo su più insiemi di dati
-per ottenere stime più affidabili delle sue capacità predittive. Questo
-processo aiuta a mitigare il rischio di overfitting e offre una migliore
-comprensione delle prestazioni del modello.
-
 
 \section{Validazione del Modello}
 \label{sec:model_validation}
