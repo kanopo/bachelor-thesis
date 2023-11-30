@@ -15,12 +15,42 @@ Una correlazione debole è stata rilevata tra la luminosità e il peso alla nasc
 nella Figura \ref{fig:correlazione tra luminosità e peso alla nascita}.
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.6\columnwidth]{Immagini/correlation_weight_abstract.png}
-    \caption{Correlazione tra luminosità e peso alla nascita}
-    \label{fig:correlazione tra luminosità e peso alla nascita}
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Immagini/correlation_weight_abstract.png}
+	\caption{Correlazione tra luminosità e peso alla nascita}
+	\label{fig:correlazione tra luminosità e peso alla nascita}
 \end{figure}
 
 La rete neurale ha dimostrato di essere efficace nel riconoscere i pixel contenenti informazioni
 sull'area del femore. Inoltre, i risultati prodotti dalla rete suggeriscono la possibilità di
 utilizzare questo approccio per ulteriori analisi.
+
+
+I risultati dell'addestramento permettono di concludere che il modello è in grado di gestire con
+efficacia set di dati diversi da quelli utilizzati per l'addestramento. Questo suggerisce un
+potenziale significativo per miglioramenti attraverso un addestramento mirato, che potrebbe affinare
+ulteriormente la capacità del modello di gestire con efficacia set di dati simili.
+
+% Sottolineando il fatto che il modello non \`e specificamente addestrato su questi dati, la sua
+% performance qualitativa appare accettabile. Ciò suggerisce un potenziale significativo per
+% miglioramenti attraverso un addestramento mirato, che potrebbe affinare ulteriormente la capacità
+% del modello di gestire con efficacia set di dati simili.
+%
+%
+
+% I risultati ottenuti dal secondo ecografo hanno sottolineato la capacità del modello di generalizzare,
+% il modello non è stato addestrato su questi dati e la sua performance qualitativa appare accettabile.
+%
+% Ciò suggerisce un potenziale significativo per miglioramenti attraverso un addestramento mirato, che
+% potrebbe affinare ulteriormente la capacità del modello di gestire con efficacia set di dati simili.
+%
+%
+
+Ne deriva che i punti di forza del modello sono la capacità di generalizzare
+con pochi dati e su ecografi differenti, aprendo possibilità di portabilità del
+modello su differenti ecografi senza necessit\`a specifica di ulteriore
+addestramento specifico al macchinario.
+
+D'altro canto come in tutte le applicazioni di deep learning, il modello
+giova di una quantità di dati sufficiente per rendere il sistema robusto e
+capace di generalizzare.

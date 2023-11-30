@@ -143,7 +143,7 @@ non solo semplifica il processo di raccolta dati, ma accelera anche la possibili
 e adattamento del modello a nuovi dati.
 
 
-\section{Analisi con il Nuovo Ecografo}
+\section{Analisi del Nuovo Ecografo}
 \label{sec:analisi_nuovo_ecografo}
 
 In questa sezione, esploriamo l'impatto dell'introduzione di un nuovo ecografo sulle prestazioni del
@@ -174,7 +174,6 @@ nessun tipo di elaborazione, ma sono state direttamente segmentate dal modello.
 		\centering
 		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/0_extracted_femur.png}
 	\end{minipage}
-	\caption{Immagine Originale, Maschera di segmentazione ottenuta dal modello e Risultato finale a seguito dell'estrazione del femore}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -193,7 +192,6 @@ nessun tipo di elaborazione, ma sono state direttamente segmentate dal modello.
 		\centering
 		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/4_extracted_femur.png}
 	\end{minipage}
-	\caption{Immagine Originale, Maschera di segmentazione ottenuta dal modello e Risultato finale a seguito dell'estrazione del femore}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -217,8 +215,8 @@ nessun tipo di elaborazione, ma sono state direttamente segmentate dal modello.
 
 \subsection{Analisi della Distribuzione dei Valori}
 \label{subsec:analisi_distribuzione_valori}
-Abbiamo inoltre esaminato la distribuzione dei valori nelle immagini acquisite dal nuovo ecografo
-per comprendere meglio come il modello gestisce le nuove informazioni.
+% Abbiamo inoltre esaminato la distribuzione dei valori nelle immagini acquisite dal nuovo ecografo
+% per comprendere meglio come il modello gestisce le nuove informazioni.
 
 \begin{figure}[!ht]
 	\centering
@@ -228,40 +226,61 @@ per comprendere meglio come il modello gestisce le nuove informazioni.
 	\label{fig:distribuzione_valori}
 \end{figure}
 
-\subsection{Risultati Quantitativi}
-\label{subsec:risultati_quantitativi}
-Di seguito sono riportati i risultati quantitativi derivanti dall'analisi delle immagini del nuovo
-ecografo.
+Sono state analizzate le distribuzioni dei valori delle immagini acquisite dal
+nuovo ecografo. Ponendole a confronto con le distribuzioni ottenute dal'
+ecografo precedentemente utilizzato (\autoref{fig:distribuzione intensità dei
+	pixel della segmentazione manuale, della segmentazione del modello e confronto
+	tra le due}), è possibile osservare che le immagini acquisite dal nuovo ecografo sono analizzabili
+dal modello.
 
-\begin{table}[ht]
-	\centering
-	\begin{tabular}{|l|c|c|}
-		\hline
-		\textbf{Immagine} & \textbf{Media} & \textbf{Deviazione Standard} \\
-		\hline
-		\hline
-		0                 & 128.225        & 47.961                       \\ \hline
-		1                 & 119.319        & 46.750                       \\ \hline
-		2                 & 175.710        & 41.832                       \\ \hline
-		3                 & 141.379        & 47.968                       \\ \hline
-		4                 & 129.142        & 50.137                       \\ \hline
-		5                 & 91.6911        & 38.671                       \\ \hline
-		6                 & 110.249        & 48.143                       \\ \hline
-		7                 & 115.113        & 43.262                       \\ \hline
-		8                 & 155.277        & 51.628                       \\ \hline
-		9                 & 114.937        & 53.817                       \\ \hline
-		10                & 145.433        & 57.311                       \\ \hline
-		11                & 152.924        & 51.922                       \\ \hline
-		12                & 128.146        & 53.493                       \\ \hline
-	\end{tabular}
-	\caption{Risultati Sperimentali}
-	\label{tab:risultati_sperimentali}
-\end{table}
+Tenendo in considerazione che il modello non è stato addestrato su questo specifico set ne su
+immagini di questo specifico ecografo, è possibile notare che la distribuzione dei valori è molto
+simile a quella delle immagini utilizzate per l'addestramento. Questo suggerisce che il modello è
+in grado di gestire con efficacia le nuove informazioni.
 
-\subsection{Discussione}
-\label{subsec:discussione}
-I risultati emersi dall'analisi delle immagini ottenute dal nuovo ecografo indicano che, nonostante
-il modello non sia stato specificamente addestrato su questi dati, la sua performance qualitativa
-appare accettabile. Ciò suggerisce un potenziale significativo per miglioramenti attraverso un
-addestramento mirato, che potrebbe affinare ulteriormente la capacità del modello di gestire con
-efficacia set di dati simili.
+
+
+% \subsection{Risultati Quantitativi}
+% \label{subsec:risultati_quantitativi}
+% Di seguito sono riportati i risultati quantitativi derivanti dall'analisi delle immagini del nuovo
+% ecografo.
+%
+% \begin{table}[ht]
+% 	\centering
+% 	\begin{tabular}{|l|c|c|}
+% 		\hline
+% 		\textbf{Immagine} & \textbf{Media} & \textbf{Deviazione Standard} \\
+% 		\hline
+% 		\hline
+% 		0                 & 128.225        & 47.961                       \\ \hline
+% 		1                 & 119.319        & 46.750                       \\ \hline
+% 		2                 & 175.710        & 41.832                       \\ \hline
+% 		3                 & 141.379        & 47.968                       \\ \hline
+% 		4                 & 129.142        & 50.137                       \\ \hline
+% 		5                 & 91.6911        & 38.671                       \\ \hline
+% 		6                 & 110.249        & 48.143                       \\ \hline
+% 		7                 & 115.113        & 43.262                       \\ \hline
+% 		8                 & 155.277        & 51.628                       \\ \hline
+% 		9                 & 114.937        & 53.817                       \\ \hline
+% 		10                & 145.433        & 57.311                       \\ \hline
+% 		11                & 152.924        & 51.922                       \\ \hline
+% 		12                & 128.146        & 53.493                       \\ \hline
+% 	\end{tabular}
+% 	\caption{Risultati Sperimentali}
+% 	\label{tab:risultati_sperimentali}
+% \end{table}
+
+% \subsection{Discussione}
+% \label{subsec:discussione}
+%
+% I risultati dell'addestramento permettono di concludere che il modello è in grado di gestire con
+% efficacia set di dati diversi da quelli utilizzati per l'addestramento. Questo suggerisce un
+% potenziale significativo per miglioramenti attraverso un addestramento mirato, che potrebbe affinare
+% ulteriormente la capacità del modello di gestire con efficacia set di dati simili.
+%
+% Sottolineando il fatto che il modello non \`e specificamente addestrato su questi dati, la sua
+% performance qualitativa appare accettabile. Ciò suggerisce un potenziale significativo per
+% miglioramenti attraverso un addestramento mirato, che potrebbe affinare ulteriormente la capacità
+% del modello di gestire con efficacia set di dati simili.
+%
+%
