@@ -16,9 +16,15 @@ insieme alle loro corrispondenti segmentazioni effettuate manualmente.
 	\label{fig:addestramento_del_modello}
 \end{figure}
 
-L'addestramento è stato eseguito per 5 iterazioni, utilizzando un fold diverso in ciascuna
+L'addestramento è stato eseguito per 5 iterazioni (\autoref{fig:loss e accuratezza della prima porzione di dati},
+\autoref{fig:loss e accuratezza della seconda porzione di dati}, \autoref{fig:loss e accuratezza della terza porzione di dati},
+\autoref{fig:loss e accuratezza della quarta porzione di dati} e \autoref{fig:loss e accuratezza della quinta porzione di dati}
+), utilizzando un fold diverso in ciascuna
 iterazione. L'errore finale è stato calcolato come la media degli errori ottenuti in ciascuna delle
 cinque iterazioni.
+
+L'errore finale è stato calcolato mettendo a confronto la segmentazione ottenuta dal modello con la
+segmentazione manuale (\autoref{fig:addestramento_del_modello}).
 
 
 \begin{figure}[!ht]
@@ -92,7 +98,7 @@ dal modello e la differenze nella classificazione dei pixel tra le due segmentaz
 	\end{minipage}
 
 	\caption{Immagine originale, segmentazione manuale e segmentazione del modello}
-	\label{fig:immagine originale, segmentazione manuale e segmentazione del modello}
+	\label{fig:risultati_quantitativi}
 \end{figure}
 
 
@@ -122,11 +128,11 @@ indicando così una segmentazione accurata.
 		\includegraphics[width=\columnwidth]{Immagini/handmade_vs_model_scaled.png}
 	\end{minipage}
 	\caption{Distribuzione Intensità dei pixel della segmentazione manuale, della segmentazione del modello e confronto tra le due}
-	\label{fig:distribuzione intensità dei pixel della segmentazione manuale, della segmentazione del modello e confronto tra le due}
+	\label{fig:grafico_distribution_value}
 \end{figure}
 
 
-I risultati mostrano che la distribuzione dei pixel nelle segmentazioni generate dal modello si
+I risultati ( \autoref{fig:risultati_quantitativi} e \autoref{fig:grafico_distribution_value} ) mostrano che la distribuzione dei pixel nelle segmentazioni generate dal modello si
 allinea strettamente a quella delle segmentazioni manuali, suggerendo che il modello è in grado di
 segmentare le immagini con precisione.
 
@@ -211,6 +217,7 @@ nessun tipo di elaborazione, ma sono state direttamente segmentate dal modello.
 		\includegraphics[width=\textwidth]{./Immagini/nuovo_ecografo_results/3_extracted_femur.png}
 	\end{minipage}
 	\caption{Immagine Originale, Maschera di segmentazione ottenuta dal modello e Risultato finale a seguito dell'estrazione del femore}
+	\label{fig:risultati_nuovo_ecografo}
 \end{figure}
 
 \subsection{Analisi della Distribuzione dei Valori}
@@ -226,11 +233,11 @@ nessun tipo di elaborazione, ma sono state direttamente segmentate dal modello.
 	\label{fig:distribuzione_valori}
 \end{figure}
 
+Una prima analisi qualitativa ( \autoref{fig:risultati_nuovo_ecografo} ) permette di osservare che il modello è in grado di segmentare le immagini acquisite dal nuovo ecografo.
+
 Sono state analizzate le distribuzioni dei valori delle immagini acquisite dal
-nuovo ecografo. Ponendole a confronto con le distribuzioni ottenute dal'
-ecografo precedentemente utilizzato (\autoref{fig:distribuzione intensità dei
-	pixel della segmentazione manuale, della segmentazione del modello e confronto
-	tra le due}), è possibile osservare che le immagini acquisite dal nuovo ecografo sono analizzabili
+nuovo ecografo ( \autoref{fig:distribuzione_valori} ). Ponendole a confronto con le distribuzioni ottenute dal'
+ecografo precedentemente utilizzato (\autoref{fig:grafico_distribution_value}), è possibile osservare che le immagini acquisite dal nuovo ecografo sono analizzabili
 dal modello.
 
 Tenendo in considerazione che il modello non è stato addestrato su questo specifico set ne su
